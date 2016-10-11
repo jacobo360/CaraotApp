@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75190BF2CD7188B1CDC90183 /* Pods_CaraotAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F885FE16F8BBBC8E07C4222 /* Pods_CaraotAppUITests.framework */; };
 		7E02F0011DAD5C67006210B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0001DAD5C67006210B5 /* AppDelegate.swift */; };
 		7E02F0031DAD5C67006210B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0021DAD5C67006210B5 /* ViewController.swift */; };
 		7E02F0061DAD5C67006210B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E02F0041DAD5C67006210B5 /* Main.storyboard */; };
@@ -14,6 +15,12 @@
 		7E02F00B1DAD5C67006210B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E02F0091DAD5C67006210B5 /* LaunchScreen.storyboard */; };
 		7E02F0161DAD5C67006210B5 /* CaraotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0151DAD5C67006210B5 /* CaraotAppTests.swift */; };
 		7E02F0211DAD5C68006210B5 /* CaraotAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0201DAD5C68006210B5 /* CaraotAppUITests.swift */; };
+		7E02F0331DAD6BDE006210B5 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0311DAD6BDE006210B5 /* InterfaceController.swift */; };
+		7E02F0341DAD6BDE006210B5 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0321DAD6BDE006210B5 /* SwipeViewController.swift */; };
+		7E02F0381DAD6F20006210B5 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0371DAD6F20006210B5 /* PageViewController.swift */; };
+		7E02F03A1DAD6FAB006210B5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0391DAD6FAB006210B5 /* ContentViewController.swift */; };
+		A7EFBB3CEB48501AE486AAE3 /* Pods_CaraotApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925FC6478215AB473B2E97BB /* Pods_CaraotApp.framework */; };
+		F5CF66A486D3E9A5667222E0 /* Pods_CaraotAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EE322604C6EA47913EA1CF /* Pods_CaraotAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C4E676220677F52E45404A7 /* Pods-CaraotAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotAppTests/Pods-CaraotAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F885FE16F8BBBC8E07C4222 /* Pods_CaraotAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaraotAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1015D96587390D792B53A185 /* Pods-CaraotAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotAppUITests/Pods-CaraotAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2361ADCEFFAB29BEE0425805 /* Pods-CaraotApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotApp/Pods-CaraotApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2CCF3A72F40C6B2FB9BDFFEB /* Pods-CaraotApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotApp/Pods-CaraotApp.release.xcconfig"; sourceTree = "<group>"; };
+		3A100357965DCAAA919E5599 /* Pods-CaraotAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotAppUITests/Pods-CaraotAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7E02EFFD1DAD5C67006210B5 /* CaraotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaraotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E02F0001DAD5C67006210B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E02F0021DAD5C67006210B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +60,13 @@
 		7E02F01C1DAD5C68006210B5 /* CaraotAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaraotAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E02F0201DAD5C68006210B5 /* CaraotAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaraotAppUITests.swift; sourceTree = "<group>"; };
 		7E02F0221DAD5C68006210B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E02F0311DAD6BDE006210B5 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		7E02F0321DAD6BDE006210B5 /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		7E02F0371DAD6F20006210B5 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		7E02F0391DAD6FAB006210B5 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		925FC6478215AB473B2E97BB /* Pods_CaraotApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaraotApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3EE322604C6EA47913EA1CF /* Pods_CaraotAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaraotAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46475F6CBB2A75AAC17D996 /* Pods-CaraotAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotAppTests/Pods-CaraotAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7EFBB3CEB48501AE486AAE3 /* Pods_CaraotApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5CF66A486D3E9A5667222E0 /* Pods_CaraotAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +90,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75190BF2CD7188B1CDC90183 /* Pods_CaraotAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17200423E09029A46FA981C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2361ADCEFFAB29BEE0425805 /* Pods-CaraotApp.debug.xcconfig */,
+				2CCF3A72F40C6B2FB9BDFFEB /* Pods-CaraotApp.release.xcconfig */,
+				0C4E676220677F52E45404A7 /* Pods-CaraotAppTests.debug.xcconfig */,
+				E46475F6CBB2A75AAC17D996 /* Pods-CaraotAppTests.release.xcconfig */,
+				1015D96587390D792B53A185 /* Pods-CaraotAppUITests.debug.xcconfig */,
+				3A100357965DCAAA919E5599 /* Pods-CaraotAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7E02EFF41DAD5C67006210B5 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +117,8 @@
 				7E02F0141DAD5C67006210B5 /* CaraotAppTests */,
 				7E02F01F1DAD5C68006210B5 /* CaraotAppUITests */,
 				7E02EFFE1DAD5C67006210B5 /* Products */,
+				17200423E09029A46FA981C4 /* Pods */,
+				852B310420CE6B73754FFD55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,9 +138,12 @@
 				7E02F0001DAD5C67006210B5 /* AppDelegate.swift */,
 				7E02F0021DAD5C67006210B5 /* ViewController.swift */,
 				7E02F0041DAD5C67006210B5 /* Main.storyboard */,
+				7E02F0371DAD6F20006210B5 /* PageViewController.swift */,
+				7E02F0391DAD6FAB006210B5 /* ContentViewController.swift */,
 				7E02F0071DAD5C67006210B5 /* Assets.xcassets */,
 				7E02F0091DAD5C67006210B5 /* LaunchScreen.storyboard */,
 				7E02F00C1DAD5C67006210B5 /* Info.plist */,
+				7E02F0351DAD6BF3006210B5 /* SwipeVC */,
 			);
 			path = CaraotApp;
 			sourceTree = "<group>";
@@ -125,6 +166,25 @@
 			path = CaraotAppUITests;
 			sourceTree = "<group>";
 		};
+		7E02F0351DAD6BF3006210B5 /* SwipeVC */ = {
+			isa = PBXGroup;
+			children = (
+				7E02F0311DAD6BDE006210B5 /* InterfaceController.swift */,
+				7E02F0321DAD6BDE006210B5 /* SwipeViewController.swift */,
+			);
+			name = SwipeVC;
+			sourceTree = "<group>";
+		};
+		852B310420CE6B73754FFD55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				925FC6478215AB473B2E97BB /* Pods_CaraotApp.framework */,
+				C3EE322604C6EA47913EA1CF /* Pods_CaraotAppTests.framework */,
+				0F885FE16F8BBBC8E07C4222 /* Pods_CaraotAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E02F0251DAD5C68006210B5 /* Build configuration list for PBXNativeTarget "CaraotApp" */;
 			buildPhases = (
+				16BC904179705519FA1B5343 /* [CP] Check Pods Manifest.lock */,
 				7E02EFF91DAD5C67006210B5 /* Sources */,
 				7E02EFFA1DAD5C67006210B5 /* Frameworks */,
 				7E02EFFB1DAD5C67006210B5 /* Resources */,
+				EEDE7255223F768C7F3029B1 /* [CP] Embed Pods Frameworks */,
+				A642DB086FE9EFD6842095B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E02F0281DAD5C68006210B5 /* Build configuration list for PBXNativeTarget "CaraotAppTests" */;
 			buildPhases = (
+				A0B57F79ED7331C1E561B54D /* [CP] Check Pods Manifest.lock */,
 				7E02F00D1DAD5C67006210B5 /* Sources */,
 				7E02F00E1DAD5C67006210B5 /* Frameworks */,
 				7E02F00F1DAD5C67006210B5 /* Resources */,
+				F6328786B45E412A8F11FBDA /* [CP] Embed Pods Frameworks */,
+				77DAEDA930A51EBDEB2EB444 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E02F02B1DAD5C68006210B5 /* Build configuration list for PBXNativeTarget "CaraotAppUITests" */;
 			buildPhases = (
+				D94A0CC625DCF538712FD7D1 /* [CP] Check Pods Manifest.lock */,
 				7E02F0181DAD5C68006210B5 /* Sources */,
 				7E02F0191DAD5C68006210B5 /* Frameworks */,
 				7E02F01A1DAD5C68006210B5 /* Resources */,
+				F23F5876309C57B6DDD5F745 /* [CP] Embed Pods Frameworks */,
+				F302471925C494C33D226AC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,13 +326,155 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16BC904179705519FA1B5343 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		77DAEDA930A51EBDEB2EB444 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CaraotAppTests/Pods-CaraotAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0B57F79ED7331C1E561B54D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A642DB086FE9EFD6842095B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CaraotApp/Pods-CaraotApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D94A0CC625DCF538712FD7D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EEDE7255223F768C7F3029B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CaraotApp/Pods-CaraotApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F23F5876309C57B6DDD5F745 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CaraotAppUITests/Pods-CaraotAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F302471925C494C33D226AC8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CaraotAppUITests/Pods-CaraotAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6328786B45E412A8F11FBDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CaraotAppTests/Pods-CaraotAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7E02EFF91DAD5C67006210B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E02F0331DAD6BDE006210B5 /* InterfaceController.swift in Sources */,
+				7E02F0381DAD6F20006210B5 /* PageViewController.swift in Sources */,
 				7E02F0031DAD5C67006210B5 /* ViewController.swift in Sources */,
 				7E02F0011DAD5C67006210B5 /* AppDelegate.swift in Sources */,
+				7E02F03A1DAD6FAB006210B5 /* ContentViewController.swift in Sources */,
+				7E02F0341DAD6BDE006210B5 /* SwipeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +622,7 @@
 		};
 		7E02F0261DAD5C68006210B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2361ADCEFFAB29BEE0425805 /* Pods-CaraotApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZPGC7734UF;
@@ -424,6 +636,7 @@
 		};
 		7E02F0271DAD5C68006210B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CCF3A72F40C6B2FB9BDFFEB /* Pods-CaraotApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZPGC7734UF;
@@ -437,6 +650,7 @@
 		};
 		7E02F0291DAD5C68006210B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C4E676220677F52E45404A7 /* Pods-CaraotAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -452,6 +666,7 @@
 		};
 		7E02F02A1DAD5C68006210B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E46475F6CBB2A75AAC17D996 /* Pods-CaraotAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -467,6 +682,7 @@
 		};
 		7E02F02C1DAD5C68006210B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1015D96587390D792B53A185 /* Pods-CaraotAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = ZPGC7734UF;
@@ -481,6 +697,7 @@
 		};
 		7E02F02D1DAD5C68006210B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A100357965DCAAA919E5599 /* Pods-CaraotAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = ZPGC7734UF;
@@ -512,6 +729,7 @@
 				7E02F0271DAD5C68006210B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E02F0281DAD5C68006210B5 /* Build configuration list for PBXNativeTarget "CaraotAppTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +738,7 @@
 				7E02F02A1DAD5C68006210B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E02F02B1DAD5C68006210B5 /* Build configuration list for PBXNativeTarget "CaraotAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +747,7 @@
 				7E02F02D1DAD5C68006210B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
