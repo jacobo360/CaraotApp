@@ -19,6 +19,8 @@
 		7E02F0341DAD6BDE006210B5 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0321DAD6BDE006210B5 /* SwipeViewController.swift */; };
 		7E02F0381DAD6F20006210B5 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0371DAD6F20006210B5 /* PageViewController.swift */; };
 		7E02F03A1DAD6FAB006210B5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0391DAD6FAB006210B5 /* ContentViewController.swift */; };
+		7E02F03E1DAF2A85006210B5 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F03D1DAF2A85006210B5 /* News.swift */; };
+		7E02F0401DAF2AF6006210B5 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F03F1DAF2AF6006210B5 /* APICaller.swift */; };
 		A7EFBB3CEB48501AE486AAE3 /* Pods_CaraotApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925FC6478215AB473B2E97BB /* Pods_CaraotApp.framework */; };
 		F5CF66A486D3E9A5667222E0 /* Pods_CaraotAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EE322604C6EA47913EA1CF /* Pods_CaraotAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		7E02F0321DAD6BDE006210B5 /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		7E02F0371DAD6F20006210B5 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		7E02F0391DAD6FAB006210B5 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		7E02F03D1DAF2A85006210B5 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		7E02F03F1DAF2AF6006210B5 /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		925FC6478215AB473B2E97BB /* Pods_CaraotApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaraotApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EE322604C6EA47913EA1CF /* Pods_CaraotAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaraotAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46475F6CBB2A75AAC17D996 /* Pods-CaraotAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotAppTests/Pods-CaraotAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				7E02F0041DAD5C67006210B5 /* Main.storyboard */,
 				7E02F0371DAD6F20006210B5 /* PageViewController.swift */,
 				7E02F0391DAD6FAB006210B5 /* ContentViewController.swift */,
+				7E02F03F1DAF2AF6006210B5 /* APICaller.swift */,
+				7E02F03D1DAF2A85006210B5 /* News.swift */,
 				7E02F0071DAD5C67006210B5 /* Assets.xcassets */,
 				7E02F0091DAD5C67006210B5 /* LaunchScreen.storyboard */,
 				7E02F00C1DAD5C67006210B5 /* Info.plist */,
@@ -473,8 +479,10 @@
 				7E02F0381DAD6F20006210B5 /* PageViewController.swift in Sources */,
 				7E02F0031DAD5C67006210B5 /* ViewController.swift in Sources */,
 				7E02F0011DAD5C67006210B5 /* AppDelegate.swift in Sources */,
+				7E02F03E1DAF2A85006210B5 /* News.swift in Sources */,
 				7E02F03A1DAD6FAB006210B5 /* ContentViewController.swift in Sources */,
 				7E02F0341DAD6BDE006210B5 /* SwipeViewController.swift in Sources */,
+				7E02F0401DAF2AF6006210B5 /* APICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
