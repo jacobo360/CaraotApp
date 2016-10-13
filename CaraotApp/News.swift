@@ -13,7 +13,7 @@ class News: NSObject, NSCoding {
     var postId:Int?
     var postURL:String?
     var postDate:String?
-    var title:String?
+    var nTitle:String?
     var imageUrl:String?
     var content:String?
     var authorLink:String?
@@ -23,7 +23,7 @@ class News: NSObject, NSCoding {
         
         //self.postId = postId
         //self.postDate = postDate
-        self.title = title
+        self.nTitle = title
         self.imageUrl = imageUrl
         self.content = content
         self.postURL = postURL
@@ -52,7 +52,7 @@ class News: NSObject, NSCoding {
         aCoder.encode(postId!, forKey: "postId")
         aCoder.encode(postURL!, forKey: "postUrl")
         aCoder.encode(postDate!, forKey: "postDate")
-        aCoder.encode(title!, forKey: "title")
+        aCoder.encode(nTitle!, forKey: "title")
         aCoder.encode(imageUrl!, forKey: "imageUrl")
         aCoder.encode(content!, forKey: "content")
         aCoder.encode(authorLink, forKey: "authorLink")

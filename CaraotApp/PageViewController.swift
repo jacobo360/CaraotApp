@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
 
     var pageViewController: UIPageViewController?
-    var newsArray: [String] = ["Example", "Example2", "Example3"]
+    var newsArray: [News] = []
     var titles: [String] = []
     
     override func viewDidLoad() {
@@ -23,6 +24,29 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
                            direction: .forward,
                            animated: true,
                            completion: nil)
+        
+        APICaller().getAllNews(url: "http://caraotadigital.org/pruebas/wp-json/wp/v2/posts?_embed") { response in
+            if response.0 != JSON.null && response.0.count != 0 {
+                for i in 0..<response.0.count {
+                    let post = News(
+                        title: response.0[i]["title"]["rendered"].stringValue,
+                        imageUrl:response.0[i]["_embedded"]["wp:featuredmedia"][0]["source_url"].stringValue,
+                        content:response.0[i]["content"]["rendered"].stringValue,
+                        postId:response.0[i]["id"].intValue,
+                        postDate:response.0[i]["date"].stringValue,
+                        postURL:response.0[i]["link"].stringValue,
+                        authorLink:response.0[i]["_embedded"]["author"][0]["name"].stringValue,
+                        categoryName:response.0[i]["_embedded"]["wp:term"][0][0]["name"].stringValue)
+                    self.newsArray.append(post)
+                }
+                
+                self.setViewControllers([self.viewControllerAt(index: 0)],
+                                   direction: .forward,
+                                   animated: true,
+                                   completion: nil)
+            }
+        }
+
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -56,32 +80,24 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         
     }
     
-    func viewControllerAt(index: Int) -> ContentViewController {
+    func viewControllerAt(index: Int) -> UIViewController {
         
         if newsArray.count == 0 || index >= newsArray.count {
-            print("returning nil")
-            return ContentViewController()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let lVC = storyboard.instantiateViewController(withIdentifier: "LoadingView")
+            return lVC
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let cVC: ContentViewController = storyboard.instantiateViewController(withIdentifier: "ContentVC") as! ContentViewController
         
         cVC.pageIndex = index
-        cVC.nTitle = "Title \(index)"
+        cVC.nTitle = newsArray[index].nTitle
+        cVC.nAuthor = newsArray[index].authorLink
+        cVC.nCategory = "  " + newsArray[index].categoryName! + "  "
+        cVC.nContent = newsArray[index].content
+        cVC.nImage = newsArray[index].imageUrl
         
-        if index == 1 {
-            cVC.color = UIColor.green
-        } else if index == 2 {
-            cVC.color = UIColor.red
-        } else {
-            cVC.color = UIColor.yellow
-        }
-        
-        cVC.title = "Titulo \(index)"
-        cVC.nAuthor = "Autor"
-        cVC.nCategory = "  Deportes \(index)  "
-        cVC.nContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        print("returning some")
         return cVC
     }
     

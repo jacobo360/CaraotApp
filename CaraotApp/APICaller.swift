@@ -13,7 +13,7 @@ import SwiftyJSON
 class APICaller {
     
     func getAllNews(url: String, callback: @escaping (JSON, Bool?) ->()) {
-        let newsURL = "http://caraotadigital.org/pruebas/wp-json/wp/v2/posts"
+        let newsURL = url
         //var parameters = ["part":"snippet, contentDetails", "playlistId":pID, "maxResults":"50", "key":apiKey]
         
         Alamofire.request(newsURL).responseJSON { response in
@@ -23,7 +23,7 @@ class APICaller {
                 
             case .failure:
                 let error = response.result.isFailure
-                callback(nil, error)
+                callback(JSON.null, error)
             }
         }
     }

@@ -7,30 +7,33 @@
 //
 
 import UIKit
+import Kingfisher
+import MDHTMLLabel
 
 class ContentViewController: UIViewController {
 
     var pageIndex: Int?
-    var color: UIColor?
     var nTitle: String?
     var nAuthor: String?
     var nContent: String?
     var nCategory: String?
+    var nImage: String?
     
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var authorLbl: UILabel!
     @IBOutlet weak var categoryLbl: UILabel!
-    @IBOutlet weak var contentLbl: UILabel!
+    @IBOutlet weak var contentLbl: MDHTMLLabel!
+    @IBOutlet weak var imgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        colorView.backgroundColor = color
+        
         titleLbl.text = nTitle
         authorLbl.text = nAuthor
-        contentLbl.text = nContent
+        contentLbl.htmlText = nContent
         categoryLbl.text = nCategory
+        imgView.kf.setImage(with: URL(string: nImage!), placeholder: UIImage(named: "salto_angel"))
         categoryLbl.layer.cornerRadius = 7
         categoryLbl.clipsToBounds = true
         // Do any additional setup after loading the view.
