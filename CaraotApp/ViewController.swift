@@ -15,7 +15,11 @@ class ViewController: RESideMenu {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        parallaxEnabled = false
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
 
     override func didReceiveMemoryWarning() {

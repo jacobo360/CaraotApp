@@ -64,9 +64,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        let vc = viewController as! ContentViewController
-        var index = vc.pageIndex
-        if index == NSNotFound {
+        let vc = viewController as? ContentViewController
+        var index = vc?.pageIndex
+        
+        if index == nil || index == NSNotFound {
             return nil
         }
         

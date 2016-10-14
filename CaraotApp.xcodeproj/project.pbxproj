@@ -23,6 +23,9 @@
 		7E02F0401DAF2AF6006210B5 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F03F1DAF2AF6006210B5 /* APICaller.swift */; };
 		7E02F1DB1DAF3A4E006210B5 /* Kingfisher.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 7E02F1BA1DAF3A11006210B5 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E02F1DE1DAF3C0F006210B5 /* SwiftyJSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 7E02F19C1DAF34B8006210B5 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E02F1F11DAFCB79006210B5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F1F01DAFCB79006210B5 /* SearchViewController.swift */; };
+		7E02F2071DAFE91D006210B5 /* ReporteroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F2061DAFE91D006210B5 /* ReporteroViewController.swift */; };
+		7E02F2201DB11B59006210B5 /* Mailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F21F1DB11B59006210B5 /* Mailer.swift */; };
 		A7EFBB3CEB48501AE486AAE3 /* Pods_CaraotApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925FC6478215AB473B2E97BB /* Pods_CaraotApp.framework */; };
 		F5CF66A486D3E9A5667222E0 /* Pods_CaraotAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EE322604C6EA47913EA1CF /* Pods_CaraotAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -234,6 +237,9 @@
 		7E02F03F1DAF2AF6006210B5 /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		7E02F1911DAF34B8006210B5 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "../../../../Downloads/SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		7E02F1AA1DAF3A10006210B5 /* Kingfisher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kingfisher.xcodeproj; path = Kingfisher/Kingfisher.xcodeproj; sourceTree = SOURCE_ROOT; };
+		7E02F1F01DAFCB79006210B5 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7E02F2061DAFE91D006210B5 /* ReporteroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReporteroViewController.swift; sourceTree = "<group>"; };
+		7E02F21F1DB11B59006210B5 /* Mailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mailer.swift; sourceTree = "<group>"; };
 		925FC6478215AB473B2E97BB /* Pods_CaraotApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaraotApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EE322604C6EA47913EA1CF /* Pods_CaraotAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaraotAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46475F6CBB2A75AAC17D996 /* Pods-CaraotAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotAppTests/Pods-CaraotAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -308,6 +314,9 @@
 				7E02F0001DAD5C67006210B5 /* AppDelegate.swift */,
 				7E02F0021DAD5C67006210B5 /* ViewController.swift */,
 				7E02F0041DAD5C67006210B5 /* Main.storyboard */,
+				7E02F2061DAFE91D006210B5 /* ReporteroViewController.swift */,
+				7E02F21F1DB11B59006210B5 /* Mailer.swift */,
+				7E02F1F01DAFCB79006210B5 /* SearchViewController.swift */,
 				7E02F0371DAD6F20006210B5 /* PageViewController.swift */,
 				7E02F0391DAD6FAB006210B5 /* ContentViewController.swift */,
 				7E02F03F1DAF2AF6006210B5 /* APICaller.swift */,
@@ -828,6 +837,9 @@
 				7E02F0331DAD6BDE006210B5 /* InterfaceController.swift in Sources */,
 				7E02F0381DAD6F20006210B5 /* PageViewController.swift in Sources */,
 				7E02F0031DAD5C67006210B5 /* ViewController.swift in Sources */,
+				7E02F2071DAFE91D006210B5 /* ReporteroViewController.swift in Sources */,
+				7E02F2201DB11B59006210B5 /* Mailer.swift in Sources */,
+				7E02F1F11DAFCB79006210B5 /* SearchViewController.swift in Sources */,
 				7E02F0011DAD5C67006210B5 /* AppDelegate.swift in Sources */,
 				7E02F03E1DAF2A85006210B5 /* News.swift in Sources */,
 				7E02F03A1DAD6FAB006210B5 /* ContentViewController.swift in Sources */,
