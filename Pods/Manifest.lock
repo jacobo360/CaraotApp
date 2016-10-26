@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (4.0.1)
+  - MDHTMLLabel (1.0.2)
+  - RESideMenu (4.0.7)
+  - Spring (1.0.3)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - MDHTMLLabel
+  - RESideMenu (~> 4.0.7)
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  Spring:
+    :branch: swift3
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
+    :git: https://github.com/MengTo/Spring.git
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  MDHTMLLabel: 18bf09ec7d6c1ae396497345c005857c0493ee0a
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+
+PODFILE CHECKSUM: 5fad4e92199f3ff3ef68c6bd73a83cf59882f6c4
+
+COCOAPODS: 1.1.0.rc.2

@@ -1,0 +1,6 @@
+framework module Pods_CaraotAppTests {
+  umbrella header "Pods-CaraotAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

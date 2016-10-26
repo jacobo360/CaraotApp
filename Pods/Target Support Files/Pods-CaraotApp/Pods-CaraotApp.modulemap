@@ -1,0 +1,6 @@
+framework module Pods_CaraotApp {
+  umbrella header "Pods-CaraotApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

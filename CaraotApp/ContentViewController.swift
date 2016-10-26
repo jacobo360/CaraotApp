@@ -32,6 +32,7 @@ class ContentViewController: UIViewController {
         titleLbl.text = nTitle
         authorLbl.text = nAuthor
         contentLbl.htmlText = nContent
+        contentLbl.firstLineIndent = 20
         categoryLbl.text = nCategory
         imgView.kf.setImage(with: URL(string: nImage!), placeholder: UIImage(named: "salto_angel"))
         categoryLbl.layer.cornerRadius = 7
