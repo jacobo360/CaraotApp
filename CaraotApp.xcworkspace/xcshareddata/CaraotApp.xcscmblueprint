@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "441826235718AF94F7F1C472C4EE254CE7482885",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "441826235718AF94F7F1C472C4EE254CE7482885" : 9223372036854775807,
+    "17FB51EC7B87DC25DD21E28FDFD877B479CFFAC1" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9C7AE7C9-2A6F-473B-89DF-A5B156466802",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "441826235718AF94F7F1C472C4EE254CE7482885" : "CaraotApp\/",
+    "17FB51EC7B87DC25DD21E28FDFD877B479CFFAC1" : "CaraotApp\/Kingfisher\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CaraotApp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CaraotApp.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/onevcat\/Kingfisher.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "17FB51EC7B87DC25DD21E28FDFD877B479CFFAC1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jacobo360\/CaraotApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "441826235718AF94F7F1C472C4EE254CE7482885"
+    }
+  ]
+}

@@ -134,7 +134,7 @@
                         <viewControllerLayoutGuide type="top" id="Kxh-eh-SqQ"/>
                         <viewControllerLayoutGuide type="bottom" id="q1J-Pb-1O6"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uNr-5u-uqU">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="uNr-5u-uqU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -331,7 +331,7 @@
                         <viewControllerLayoutGuide type="top" id="bX1-CC-N3m"/>
                         <viewControllerLayoutGuide type="bottom" id="ahQ-LS-sfU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oz4-1P-x4l">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="oz4-1P-x4l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
