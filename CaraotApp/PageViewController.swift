@@ -71,8 +71,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
             }
         }
         
-        print("CATEGORIES")
-        print(categories)
+        print("http://caraotadigital.net/wp-json/wp/v2/posts?_embed&per_page=10&page=\(page)\(categories)")
         
         APICaller().getAllNews(url: "http://caraotadigital.net/wp-json/wp/v2/posts?_embed&per_page=10&page=\(page)\(categories)") { response in
             if response.0 != JSON.null && response.0.count != 0 {
@@ -142,8 +141,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         
         let vc = viewController as? ContentViewController
         var index = vc?.pageIndex
-        
-        print("INDEX: \(index!)")
         
         if index == nil || index == NSNotFound {
             return nil

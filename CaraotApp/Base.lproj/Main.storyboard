@@ -69,37 +69,38 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-fF-Ab8">
-                                <frame key="frameInset" minX="24" minY="194" width="327" height="38"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-fF-Ab8">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" fixedFrame="YES" text="Autor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-oR-Y50">
-                                <frame key="frameInset" minX="24" minY="378" width="343" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-xK-m26" customClass="MDHTMLLabel">
-                                <frame key="frameInset" minX="24" minY="303" width="327" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-xK-m26" customClass="MDHTMLLabel">
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lg-I2-Asf">
-                                <frame key="frameInset" minX="294" minY="330" width="61" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="  Label  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpR-v4-Iau">
+                                <color key="backgroundColor" red="0.26086857914924622" green="0.66922569274902344" blue="0.18738076090812683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lg-I2-Asf">
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="ver más">
                                     <color key="titleColor" red="0.031372549020000001" green="0.67843137249999996" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" text="  Label  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpR-v4-Iau">
-                                <frame key="frameInset" minX="26" minY="236" width="60" height="21"/>
-                                <color key="backgroundColor" red="0.031372549019607843" green="0.67843137254901964" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-P6-7xC">
+                                <color key="backgroundColor" red="0.25829261541366577" green="0.68890911340713501" blue="0.18547749519348145" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="LCQ-sQ-ds8"/>
+                                    <constraint firstAttribute="height" constant="2" id="imW-vb-e8o"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Autor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-oR-Y50">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.25829261541366577" green="0.68890911340713501" blue="0.18547749519348145" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -107,21 +108,28 @@
                         <constraints>
                             <constraint firstItem="NmA-fF-Ab8" firstAttribute="leading" secondItem="R0d-JX-9SR" secondAttribute="leadingMargin" constant="8" id="4DV-ta-zl8"/>
                             <constraint firstItem="NmA-fF-Ab8" firstAttribute="height" relation="lessThanOrEqual" secondItem="rPt-5k-ZFO" secondAttribute="height" multiplier="0.45" id="4uP-53-VJ6"/>
-                            <constraint firstItem="tpR-v4-Iau" firstAttribute="top" secondItem="NmA-fF-Ab8" secondAttribute="bottom" constant="8" id="5vC-wb-J2v"/>
+                            <constraint firstItem="tpR-v4-Iau" firstAttribute="top" secondItem="NmA-fF-Ab8" secondAttribute="bottom" constant="10" id="5vC-wb-J2v"/>
                             <constraint firstItem="hfQ-tz-w6E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2lg-I2-Asf" secondAttribute="bottom" constant="20" id="9ir-FP-q4W"/>
                             <constraint firstItem="C8t-tB-1cJ" firstAttribute="width" secondItem="h0l-op-PvD" secondAttribute="width" multiplier="0.2" id="Bbz-Le-IJn"/>
                             <constraint firstItem="rPt-5k-ZFO" firstAttribute="leading" secondItem="R0d-JX-9SR" secondAttribute="leading" id="DNy-dc-fiC"/>
+                            <constraint firstItem="0Qf-P6-7xC" firstAttribute="leading" secondItem="H0T-oR-Y50" secondAttribute="leading" id="G2z-pq-Rfq"/>
                             <constraint firstAttribute="trailing" secondItem="rPt-5k-ZFO" secondAttribute="trailing" id="GuU-RB-FuF"/>
+                            <constraint firstItem="H0T-oR-Y50" firstAttribute="trailing" secondItem="R0d-JX-9SR" secondAttribute="trailingMargin" id="Kq6-tX-oH0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NmA-fF-Ab8" secondAttribute="trailing" constant="8" id="LeL-4q-An2"/>
                             <constraint firstItem="h0l-op-PvD" firstAttribute="top" secondItem="nZM-0M-YdS" secondAttribute="bottom" constant="-20" id="N29-0O-aHn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="C8t-tB-1cJ" secondAttribute="trailing" id="N2f-z8-BMH"/>
                             <constraint firstItem="C8t-tB-1cJ" firstAttribute="top" secondItem="nZM-0M-YdS" secondAttribute="bottom" id="SFb-5R-ofc"/>
                             <constraint firstItem="rPt-5k-ZFO" firstAttribute="height" secondItem="R0d-JX-9SR" secondAttribute="height" multiplier="0.4" id="SPf-m2-moF"/>
+                            <constraint firstItem="tpR-v4-Iau" firstAttribute="bottom" secondItem="h0l-op-PvD" secondAttribute="bottom" constant="-10" id="V0Y-oT-5FS"/>
+                            <constraint firstItem="0Qf-P6-7xC" firstAttribute="top" secondItem="H0T-oR-Y50" secondAttribute="bottom" constant="4" id="XgF-Bd-P0Y"/>
+                            <constraint firstItem="GHA-xK-m26" firstAttribute="top" secondItem="H0T-oR-Y50" secondAttribute="bottom" constant="20" id="c3j-Sj-wwa"/>
                             <constraint firstItem="h0l-op-PvD" firstAttribute="height" secondItem="rPt-5k-ZFO" secondAttribute="height" id="cG9-7d-qdE"/>
+                            <constraint firstItem="H0T-oR-Y50" firstAttribute="leading" secondItem="GHA-xK-m26" secondAttribute="leading" id="cSR-cw-dZt"/>
                             <constraint firstItem="tpR-v4-Iau" firstAttribute="leading" secondItem="NmA-fF-Ab8" secondAttribute="leading" id="ea9-bz-EHT"/>
                             <constraint firstItem="GHA-xK-m26" firstAttribute="trailing" secondItem="R0d-JX-9SR" secondAttribute="trailingMargin" constant="-8" id="gEJ-qB-WCX"/>
                             <constraint firstItem="GHA-xK-m26" firstAttribute="leading" secondItem="R0d-JX-9SR" secondAttribute="leadingMargin" constant="8" id="hqp-DU-UHj"/>
                             <constraint firstItem="2lg-I2-Asf" firstAttribute="top" secondItem="GHA-xK-m26" secondAttribute="bottom" constant="8" id="hs8-eL-ySe"/>
+                            <constraint firstItem="H0T-oR-Y50" firstAttribute="top" secondItem="h0l-op-PvD" secondAttribute="bottom" constant="8" id="oom-lE-K2M"/>
                             <constraint firstAttribute="trailing" secondItem="2lg-I2-Asf" secondAttribute="trailing" constant="20" id="rcN-AO-Bw3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h0l-op-PvD" secondAttribute="trailing" constant="-20" id="svN-Ma-EQU"/>
                             <constraint firstItem="rPt-5k-ZFO" firstAttribute="top" secondItem="R0d-JX-9SR" secondAttribute="top" id="xSc-hz-6Fa"/>
