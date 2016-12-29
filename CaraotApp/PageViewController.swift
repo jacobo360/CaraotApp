@@ -14,10 +14,17 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     var pageViewController: UIPageViewController?
     var newsArray: [News] = []
     var titles: [String] = []
+    var page = 1
+    var redo = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if defaults.array(forKey: "selectedCategories") == nil {
+            redo = true
+            performSegue(withIdentifier: "to_categories", sender: self)
+        }
+        
         dataSource = self
         
         setViewControllers([viewControllerAt(index: 0)],
@@ -25,7 +32,37 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
                            animated: true,
                            completion: nil)
         
-        APICaller().getAllNews(url: "http://caraotadigital.org/pruebas/wp-json/wp/v2/posts?_embed") { response in
+        getNews(andReload: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //If comming from category selection, redo search
+        if redo {
+            getNews(andReload: true)
+            redo = false
+        }
+    }
+    
+    func getNews(andReload: Bool) {
+        
+        //Append fav categories if existent
+        var categories = ""
+        if let selected = defaults.array(forKey: "selectedCategories") as? [Int] {
+            if selected.count != 0 {
+                categories = "&categories="
+                for i in 0..<selected.count {
+                    if i != selected.count - 1 {
+                        categories = categories + "\(selected[i]),"
+                    } else {
+                        categories = categories + "\(selected[i])"
+                    }
+                }
+            }
+        }
+        
+        print(categories)
+        
+        APICaller().getAllNews(url: "http://caraotadigital.net/wp-json/wp/v2/posts?_embed&per_page=50&page=\(page)") { response in
             if response.0 != JSON.null && response.0.count != 0 {
                 for i in 0..<response.0.count {
                     let post = News(
@@ -40,13 +77,16 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
                     self.newsArray.append(post)
                 }
                 
-                self.setViewControllers([self.viewControllerAt(index: 0)],
-                                   direction: .forward,
-                                   animated: true,
-                                   completion: nil)
+                self.page += 1
+                
+                if andReload {
+                    self.setViewControllers([self.viewControllerAt(index: 0)],
+                                            direction: .forward,
+                                            animated: true,
+                                            completion: nil)
+                }
             }
         }
-
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

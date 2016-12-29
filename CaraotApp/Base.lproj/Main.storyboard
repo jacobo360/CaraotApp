@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bgL-HJ-sr5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bgL-HJ-sr5">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -51,7 +50,7 @@
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0l-op-PvD">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-fF-Ab8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-fF-Ab8">
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -118,10 +117,119 @@
             </objects>
             <point key="canvasLocation" x="1836" y="-153.37331334332833"/>
         </scene>
+        <!--Category Chooser View Controller-->
+        <scene sceneID="7uo-Fg-qAx">
+            <objects>
+                <viewController id="yMi-qf-hUF" customClass="CategoryChooserViewController" customModule="CaraotApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i3t-6v-Seb"/>
+                        <viewControllerLayoutGuide type="bottom" id="L3N-g9-YdI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yzI-cp-s8Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cam-background" translatesAutoresizingMaskIntoConstraints="NO" id="fbc-CW-Jrt"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categorías Preferidas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2K-P0-b7W">
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Bienvenido a Caraota Digital!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="1EH-FU-rhq">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona las categorías que más te interesan." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="UpZ-W8-MZs">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8K2-0d-h35">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P8o-lm-pc3">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" reuseIdentifier="Cell" id="jAi-XM-kjb" customClass="Cell">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nacionales" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="rjx-w4-3Ns">
+                                                    <frame key="frameInset" minX="8" minY="40" width="84" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_white" translatesAutoresizingMaskIntoConstraints="NO" id="5Vd-eB-ZTr"/>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="5Vd-eB-ZTr" firstAttribute="trailing" secondItem="jAi-XM-kjb" secondAttribute="trailingMargin" id="qGF-c8-TRO"/>
+                                            <constraint firstItem="5Vd-eB-ZTr" firstAttribute="bottom" secondItem="jAi-XM-kjb" secondAttribute="bottomMargin" id="znl-re-kcY"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSx-nr-smM">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Guardar">
+                                    <color key="titleColor" red="0.80376023054122925" green="0.9879191517829895" blue="0.56145155429840088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="guardarBtn:" destination="yMi-qf-hUF" eventType="touchUpInside" id="x0x-zk-IgS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8K2-0d-h35" firstAttribute="leading" secondItem="yzI-cp-s8Z" secondAttribute="leadingMargin" id="3CN-Js-Tjv"/>
+                            <constraint firstItem="bSx-nr-smM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yzI-cp-s8Z" secondAttribute="leadingMargin" id="4jq-Hm-N5r"/>
+                            <constraint firstItem="W2K-P0-b7W" firstAttribute="top" secondItem="i3t-6v-Seb" secondAttribute="bottom" constant="8" id="63n-mo-LkE"/>
+                            <constraint firstItem="L3N-g9-YdI" firstAttribute="top" secondItem="bSx-nr-smM" secondAttribute="bottom" constant="20" id="6l9-WA-zsr"/>
+                            <constraint firstItem="1EH-FU-rhq" firstAttribute="top" secondItem="W2K-P0-b7W" secondAttribute="bottom" constant="8" id="7Ed-cC-1mV"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="bSx-nr-smM" secondAttribute="trailing" id="7aR-XQ-z2L"/>
+                            <constraint firstItem="L3N-g9-YdI" firstAttribute="top" secondItem="fbc-CW-Jrt" secondAttribute="bottom" id="9OF-si-UCD"/>
+                            <constraint firstItem="8K2-0d-h35" firstAttribute="top" secondItem="UpZ-W8-MZs" secondAttribute="bottom" constant="20" id="G1D-80-sMw"/>
+                            <constraint firstItem="UpZ-W8-MZs" firstAttribute="trailing" secondItem="yzI-cp-s8Z" secondAttribute="trailingMargin" constant="-20" id="MVh-kC-gKZ"/>
+                            <constraint firstItem="1EH-FU-rhq" firstAttribute="leading" secondItem="yzI-cp-s8Z" secondAttribute="leadingMargin" id="Mof-do-j0o"/>
+                            <constraint firstItem="UpZ-W8-MZs" firstAttribute="top" secondItem="1EH-FU-rhq" secondAttribute="bottom" constant="1" id="Ogf-Y3-34R"/>
+                            <constraint firstItem="W2K-P0-b7W" firstAttribute="leading" secondItem="yzI-cp-s8Z" secondAttribute="leadingMargin" id="TbE-Kd-nKC"/>
+                            <constraint firstItem="fbc-CW-Jrt" firstAttribute="leading" secondItem="yzI-cp-s8Z" secondAttribute="leading" id="cb0-9Q-egO"/>
+                            <constraint firstItem="W2K-P0-b7W" firstAttribute="trailing" secondItem="yzI-cp-s8Z" secondAttribute="trailingMargin" id="d6B-rg-rwR"/>
+                            <constraint firstItem="bSx-nr-smM" firstAttribute="top" secondItem="8K2-0d-h35" secondAttribute="bottom" constant="20" id="fEG-Kr-7Id"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1EH-FU-rhq" secondAttribute="trailing" id="fET-Rc-SD1"/>
+                            <constraint firstAttribute="trailing" secondItem="fbc-CW-Jrt" secondAttribute="trailing" id="fgi-1v-upO"/>
+                            <constraint firstItem="bSx-nr-smM" firstAttribute="centerX" secondItem="yzI-cp-s8Z" secondAttribute="centerX" id="gXp-Nf-OYu"/>
+                            <constraint firstItem="8K2-0d-h35" firstAttribute="trailing" secondItem="yzI-cp-s8Z" secondAttribute="trailingMargin" id="iy4-yI-yX1"/>
+                            <constraint firstItem="UpZ-W8-MZs" firstAttribute="leading" secondItem="yzI-cp-s8Z" secondAttribute="leadingMargin" constant="20" id="jVn-r3-njH"/>
+                            <constraint firstItem="fbc-CW-Jrt" firstAttribute="top" secondItem="yzI-cp-s8Z" secondAttribute="top" id="vsz-QP-yRy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collView" destination="8K2-0d-h35" id="Ywk-8s-S4V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F42-59-TVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="-892.80359820089961"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="GoG-xg-kKv">
             <objects>
-                <pageViewController storyboardIdentifier="frontViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="eQH-Xz-bIi" customClass="PageViewController" customModule="CaraotApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="frontViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="eQH-Xz-bIi" customClass="PageViewController" customModule="CaraotApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="yMi-qf-hUF" kind="presentation" identifier="to_categories" id="1Rh-41-qNO"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbG-UL-Iy4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1740" y="-174.06296851574214"/>
@@ -503,9 +611,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cam-background" width="2250" height="4000"/>
         <image name="camera" width="161" height="145"/>
         <image name="caraota" width="900" height="900"/>
         <image name="group" width="24" height="24"/>
+        <image name="ic_check_white" width="24" height="24"/>
         <image name="mail" width="24" height="24"/>
         <image name="perm" width="24" height="24"/>
         <image name="salto_angel" width="1024" height="768"/>
