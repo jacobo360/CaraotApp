@@ -21,8 +21,8 @@ class News: NSObject, NSCoding {
     
     required init(title:String,imageUrl:String,content:String,postId:Int,postDate:String,postURL:String,authorLink:String,categoryName:String){
         
-        //self.postId = postId
-        //self.postDate = postDate
+        self.postId = postId
+        self.postDate = postDate
         self.nTitle = title
         self.imageUrl = imageUrl
         self.content = content

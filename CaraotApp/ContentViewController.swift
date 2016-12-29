@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import MDHTMLLabel
+import Spring
 
 class ContentViewController: UIViewController {
 
@@ -25,6 +26,7 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var categoryLbl: UILabel!
     @IBOutlet weak var contentLbl: MDHTMLLabel!
     @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var caraotaAnim: SpringImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +42,18 @@ class ContentViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if (self.parent as! PageViewController).loading {
+            
+            caraotaAnim.isHidden = false
+            
+        } else {
+            
+            caraotaAnim.isHidden = true
+            
+        }
+        
     }
     
 

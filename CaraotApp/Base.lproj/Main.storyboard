@@ -50,52 +50,75 @@
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0l-op-PvD">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-fF-Ab8">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caraota2" translatesAutoresizingMaskIntoConstraints="NO" id="C8t-tB-1cJ" customClass="SpringImageView" customModule="Spring">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="C8t-tB-1cJ" secondAttribute="height" multiplier="1:1" id="2ht-vm-avv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="curve" value="spring"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="repeatCount">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-fF-Ab8">
+                                <frame key="frameInset" minX="24" minY="194" width="327" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Autor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-oR-Y50">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" fixedFrame="YES" text="Autor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-oR-Y50">
+                                <frame key="frameInset" minX="24" minY="378" width="343" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-xK-m26" customClass="MDHTMLLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-xK-m26" customClass="MDHTMLLabel">
+                                <frame key="frameInset" minX="24" minY="303" width="327" height="19"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="  Label  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpR-v4-Iau">
-                                <color key="backgroundColor" red="0.031372549019607843" green="0.67843137254901964" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lg-I2-Asf">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lg-I2-Asf">
+                                <frame key="frameInset" minX="294" minY="330" width="61" height="32"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="ver más">
                                     <color key="titleColor" red="0.031372549020000001" green="0.67843137249999996" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" text="  Label  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpR-v4-Iau">
+                                <frame key="frameInset" minX="26" minY="236" width="60" height="21"/>
+                                <color key="backgroundColor" red="0.031372549019607843" green="0.67843137254901964" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NmA-fF-Ab8" firstAttribute="leading" secondItem="R0d-JX-9SR" secondAttribute="leadingMargin" constant="8" id="4DV-ta-zl8"/>
                             <constraint firstItem="NmA-fF-Ab8" firstAttribute="height" relation="lessThanOrEqual" secondItem="rPt-5k-ZFO" secondAttribute="height" multiplier="0.45" id="4uP-53-VJ6"/>
-                            <constraint firstItem="tpR-v4-Iau" firstAttribute="top" secondItem="rPt-5k-ZFO" secondAttribute="bottom" constant="8" id="7x4-pU-pUs"/>
+                            <constraint firstItem="tpR-v4-Iau" firstAttribute="top" secondItem="NmA-fF-Ab8" secondAttribute="bottom" constant="8" id="5vC-wb-J2v"/>
                             <constraint firstItem="hfQ-tz-w6E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2lg-I2-Asf" secondAttribute="bottom" constant="20" id="9ir-FP-q4W"/>
+                            <constraint firstItem="C8t-tB-1cJ" firstAttribute="width" secondItem="h0l-op-PvD" secondAttribute="width" multiplier="0.2" id="Bbz-Le-IJn"/>
                             <constraint firstItem="rPt-5k-ZFO" firstAttribute="leading" secondItem="R0d-JX-9SR" secondAttribute="leading" id="DNy-dc-fiC"/>
                             <constraint firstAttribute="trailing" secondItem="rPt-5k-ZFO" secondAttribute="trailing" id="GuU-RB-FuF"/>
-                            <constraint firstItem="H0T-oR-Y50" firstAttribute="trailing" secondItem="R0d-JX-9SR" secondAttribute="trailingMargin" constant="8" id="HRj-6Y-lhR"/>
-                            <constraint firstItem="H0T-oR-Y50" firstAttribute="bottom" secondItem="rPt-5k-ZFO" secondAttribute="bottom" constant="-8" id="Jxa-MG-fqd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NmA-fF-Ab8" secondAttribute="trailing" constant="8" id="LeL-4q-An2"/>
                             <constraint firstItem="h0l-op-PvD" firstAttribute="top" secondItem="nZM-0M-YdS" secondAttribute="bottom" constant="-20" id="N29-0O-aHn"/>
-                            <constraint firstItem="H0T-oR-Y50" firstAttribute="top" secondItem="NmA-fF-Ab8" secondAttribute="bottom" constant="8" id="RaH-lz-XAZ"/>
-                            <constraint firstItem="rPt-5k-ZFO" firstAttribute="height" secondItem="R0d-JX-9SR" secondAttribute="height" multiplier="0.6" id="SPf-m2-moF"/>
-                            <constraint firstItem="H0T-oR-Y50" firstAttribute="leading" secondItem="R0d-JX-9SR" secondAttribute="leadingMargin" constant="8" id="a2r-tJ-4Ok"/>
-                            <constraint firstItem="GHA-xK-m26" firstAttribute="top" secondItem="tpR-v4-Iau" secondAttribute="bottom" constant="7" id="aUs-QY-CoC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C8t-tB-1cJ" secondAttribute="trailing" id="N2f-z8-BMH"/>
+                            <constraint firstItem="C8t-tB-1cJ" firstAttribute="top" secondItem="nZM-0M-YdS" secondAttribute="bottom" id="SFb-5R-ofc"/>
+                            <constraint firstItem="rPt-5k-ZFO" firstAttribute="height" secondItem="R0d-JX-9SR" secondAttribute="height" multiplier="0.4" id="SPf-m2-moF"/>
                             <constraint firstItem="h0l-op-PvD" firstAttribute="height" secondItem="rPt-5k-ZFO" secondAttribute="height" id="cG9-7d-qdE"/>
-                            <constraint firstItem="tpR-v4-Iau" firstAttribute="leading" secondItem="R0d-JX-9SR" secondAttribute="leadingMargin" id="fWk-k7-iDi"/>
+                            <constraint firstItem="tpR-v4-Iau" firstAttribute="leading" secondItem="NmA-fF-Ab8" secondAttribute="leading" id="ea9-bz-EHT"/>
                             <constraint firstItem="GHA-xK-m26" firstAttribute="trailing" secondItem="R0d-JX-9SR" secondAttribute="trailingMargin" constant="-8" id="gEJ-qB-WCX"/>
                             <constraint firstItem="GHA-xK-m26" firstAttribute="leading" secondItem="R0d-JX-9SR" secondAttribute="leadingMargin" constant="8" id="hqp-DU-UHj"/>
                             <constraint firstItem="2lg-I2-Asf" firstAttribute="top" secondItem="GHA-xK-m26" secondAttribute="bottom" constant="8" id="hs8-eL-ySe"/>
@@ -107,6 +130,7 @@
                     </view>
                     <connections>
                         <outlet property="authorLbl" destination="H0T-oR-Y50" id="FZI-6k-Y6O"/>
+                        <outlet property="caraotaAnim" destination="C8t-tB-1cJ" id="98x-Yz-SUV"/>
                         <outlet property="categoryLbl" destination="tpR-v4-Iau" id="uBN-vH-3Xj"/>
                         <outlet property="contentLbl" destination="GHA-xK-m26" id="UkC-b0-Uty"/>
                         <outlet property="imgView" destination="rPt-5k-ZFO" id="qXj-qb-tzB"/>
@@ -147,7 +171,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8K2-0d-h35">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P8o-lm-pc3">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="P8o-lm-pc3">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -185,7 +209,7 @@
                                     <color key="titleColor" red="0.80376023054122925" green="0.9879191517829895" blue="0.56145155429840088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="guardarBtn:" destination="yMi-qf-hUF" eventType="touchUpInside" id="x0x-zk-IgS"/>
+                                    <action selector="guardarBtn:" destination="yMi-qf-hUF" eventType="touchUpInside" id="J9X-w9-sX0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -614,6 +638,7 @@
         <image name="cam-background" width="2250" height="4000"/>
         <image name="camera" width="161" height="145"/>
         <image name="caraota" width="900" height="900"/>
+        <image name="caraota2" width="900" height="900"/>
         <image name="group" width="24" height="24"/>
         <image name="ic_check_white" width="24" height="24"/>
         <image name="mail" width="24" height="24"/>

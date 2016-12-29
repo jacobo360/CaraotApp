@@ -16,6 +16,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     var titles: [String] = []
     var page = 1
     var redo = false
+    var loading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,27 +24,37 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         if defaults.array(forKey: "selectedCategories") == nil {
             redo = true
             performSegue(withIdentifier: "to_categories", sender: self)
+            redo = true
+        } else {
+        
+            dataSource = self
+            
+            setViewControllers([viewControllerAt(index: 0)],
+                               direction: .forward,
+                               animated: true,
+                               completion: nil)
+            
+            getNews(andReload: true)
+            
         }
-        
-        dataSource = self
-        
-        setViewControllers([viewControllerAt(index: 0)],
-                           direction: .forward,
-                           animated: true,
-                           completion: nil)
-        
-        getNews(andReload: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //If comming from category selection, redo search
-        if redo {
-            getNews(andReload: true)
-            redo = false
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        //If comming from category selection, redo search
+//        if redo {
+//            newsArray = []
+//            setViewControllers([viewControllerAt(index: 0)],
+//                               direction: .forward,
+//                               animated: true,
+//                               completion: nil)
+//            getNews(andReload: true)
+//            redo = false
+//        }
+//    }
     
     func getNews(andReload: Bool) {
+        
+        loading = true
         
         //Append fav categories if existent
         var categories = ""
@@ -60,10 +71,15 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
             }
         }
         
+        print("CATEGORIES")
         print(categories)
         
-        APICaller().getAllNews(url: "http://caraotadigital.net/wp-json/wp/v2/posts?_embed&per_page=50&page=\(page)") { response in
+        APICaller().getAllNews(url: "http://caraotadigital.net/wp-json/wp/v2/posts?_embed&per_page=10&page=\(page)\(categories)") { response in
             if response.0 != JSON.null && response.0.count != 0 {
+                
+                //Controls loading icon in ContentVC
+                self.loading = false
+                
                 for i in 0..<response.0.count {
                     let post = News(
                         title: response.0[i]["title"]["rendered"].stringValue,
@@ -74,15 +90,35 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
                         postURL:response.0[i]["link"].stringValue,
                         authorLink:response.0[i]["_embedded"]["author"][0]["name"].stringValue,
                         categoryName:response.0[i]["_embedded"]["wp:term"][0][0]["name"].stringValue)
-                    self.newsArray.append(post)
-                }
+                    
+                    //APPEND IF NOT REPEATED
+                    //Get arrayof ids from newsArray
+                    var ids: [Int] = []
+                    for news in self.newsArray {
+                        ids.append(news.postId!)
+                    }
+                    //Check if newsArray contains id
+                    if !ids.contains(post.postId!) {
+                        self.newsArray.append(post)
+                    }
                 
+                }
+            
                 self.page += 1
                 
                 if andReload {
+                    print("SETTING NEW")
                     self.setViewControllers([self.viewControllerAt(index: 0)],
                                             direction: .forward,
                                             animated: true,
+                                            completion: nil)
+                } else {
+                    let currentIndex = (self.childViewControllers[0] as! ContentViewController).pageIndex! + 1
+                    print("CURRENT INDEX IS \(currentIndex)")
+//                    print("CURRENT VCs ARE \(self.childViewControllers)")
+                    self.setViewControllers([self.viewControllerAt(index: currentIndex)],
+                                            direction: .forward,
+                                            animated: false,
                                             completion: nil)
                 }
             }
@@ -107,6 +143,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         let vc = viewController as? ContentViewController
         var index = vc?.pageIndex
         
+        print("INDEX: \(index!)")
+        
         if index == nil || index == NSNotFound {
             return nil
         }
@@ -115,6 +153,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         
         if index == self.newsArray.count {
             return nil
+        }
+        
+        if index == self.newsArray.count - 2 {
+            getNews(andReload: false)
         }
         
         return viewControllerAt(index: index!)

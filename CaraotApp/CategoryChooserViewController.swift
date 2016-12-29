@@ -45,7 +45,6 @@ class CategoryChooserViewController: UIViewController, UICollectionViewDataSourc
             if selected.contains(Array(categories.keys)[indexPath.item]) {
 
                 cell.alpha = 1
-                print(indexPath.item % 4)
                 cell.backgroundColor = COLORS[indexPath.item % 4]
                 checkmark.isHidden = false
                 
