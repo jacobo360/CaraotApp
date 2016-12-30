@@ -39,20 +39,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftString-SwiftString.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftString.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>163022B0B416B330CA9EDEF92F66E960</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4287A3C264B238AF71A775BD0D238950</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>54B70AB0453CAB4BAA8805C544F080F4</key>
+		<key>4E42504048AAA52C0A7CE810BD2F423C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +72,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A11B87A1C569D1BF15939E997D0B7E7A</key>
+		<key>7DF05CAD37DE8A99BF6A867FE5DB7355</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>86ED8133D718532B037AB3EF3622560A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C32CC8CD81D87DF12F5AF82F2B00E782</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>CDFF717F2F9CDE2884B2EC678E9C901F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC0FACE5CD748EDCCF4FAF9B7D947D2A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

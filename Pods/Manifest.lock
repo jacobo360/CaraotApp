@@ -3,12 +3,14 @@ PODS:
   - MDHTMLLabel (1.0.2)
   - RESideMenu (4.0.7)
   - Spring (1.0.3)
+  - SwiftString (0.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - MDHTMLLabel
   - RESideMenu (~> 4.0.7)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+  - SwiftString
 
 EXTERNAL SOURCES:
   Spring:
@@ -25,7 +27,8 @@ SPEC CHECKSUMS:
   MDHTMLLabel: 18bf09ec7d6c1ae396497345c005857c0493ee0a
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftString: ec9c31c55b2aa147a1154f5f5f8483dc71e3165f
 
-PODFILE CHECKSUM: 5fad4e92199f3ff3ef68c6bd73a83cf59882f6c4
+PODFILE CHECKSUM: e1f99c98bc56e0cb01baf1a799a25413869382dd
 
 COCOAPODS: 1.1.0.rc.2

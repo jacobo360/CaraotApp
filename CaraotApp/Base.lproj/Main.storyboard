@@ -140,7 +140,7 @@
                         <outlet property="authorLbl" destination="H0T-oR-Y50" id="FZI-6k-Y6O"/>
                         <outlet property="caraotaAnim" destination="C8t-tB-1cJ" id="98x-Yz-SUV"/>
                         <outlet property="categoryLbl" destination="tpR-v4-Iau" id="uBN-vH-3Xj"/>
-                        <outlet property="contentLbl" destination="GHA-xK-m26" id="UkC-b0-Uty"/>
+                        <outlet property="contentLbl" destination="GHA-xK-m26" id="Sjm-sN-yhc"/>
                         <outlet property="imgView" destination="rPt-5k-ZFO" id="qXj-qb-tzB"/>
                         <outlet property="titleLbl" destination="NmA-fF-Ab8" id="5Ui-IJ-Ycw"/>
                     </connections>

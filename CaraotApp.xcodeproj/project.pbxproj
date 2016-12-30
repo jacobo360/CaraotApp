@@ -27,6 +27,7 @@
 		7E02F2071DAFE91D006210B5 /* ReporteroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F2061DAFE91D006210B5 /* ReporteroViewController.swift */; };
 		7E02F2201DB11B59006210B5 /* Mailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F21F1DB11B59006210B5 /* Mailer.swift */; };
 		7EB8D9501E146A95002F8741 /* CategoryChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8D94F1E146A95002F8741 /* CategoryChooserViewController.swift */; };
+		7EB8D9811E15B770002F8741 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8D9801E15B770002F8741 /* Parser.swift */; };
 		A7EFBB3CEB48501AE486AAE3 /* Pods_CaraotApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925FC6478215AB473B2E97BB /* Pods_CaraotApp.framework */; };
 		F5CF66A486D3E9A5667222E0 /* Pods_CaraotAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EE322604C6EA47913EA1CF /* Pods_CaraotAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -242,6 +243,7 @@
 		7E02F2061DAFE91D006210B5 /* ReporteroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReporteroViewController.swift; sourceTree = "<group>"; };
 		7E02F21F1DB11B59006210B5 /* Mailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mailer.swift; sourceTree = "<group>"; };
 		7EB8D94F1E146A95002F8741 /* CategoryChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryChooserViewController.swift; sourceTree = "<group>"; };
+		7EB8D9801E15B770002F8741 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		925FC6478215AB473B2E97BB /* Pods_CaraotApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaraotApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EE322604C6EA47913EA1CF /* Pods_CaraotAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaraotAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46475F6CBB2A75AAC17D996 /* Pods-CaraotAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotAppTests/Pods-CaraotAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -322,7 +324,7 @@
 				7E02F0371DAD6F20006210B5 /* PageViewController.swift */,
 				7E02F0391DAD6FAB006210B5 /* ContentViewController.swift */,
 				7E02F03F1DAF2AF6006210B5 /* APICaller.swift */,
-				7E02F03D1DAF2A85006210B5 /* News.swift */,
+				7EB8D96E1E15B753002F8741 /* Custom Classes */,
 				7E02F0071DAD5C67006210B5 /* Assets.xcassets */,
 				7E02F0041DAD5C67006210B5 /* Main.storyboard */,
 				7E02F0091DAD5C67006210B5 /* LaunchScreen.storyboard */,
@@ -392,6 +394,15 @@
 				7E02F1D01DAF3A11006210B5 /* KingfisherTests-macOS.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7EB8D96E1E15B753002F8741 /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7E02F03D1DAF2A85006210B5 /* News.swift */,
+				7EB8D9801E15B770002F8741 /* Parser.swift */,
+			);
+			name = "Custom Classes";
 			sourceTree = "<group>";
 		};
 		852B310420CE6B73754FFD55 /* Frameworks */ = {
@@ -841,6 +852,7 @@
 				7E02F0381DAD6F20006210B5 /* PageViewController.swift in Sources */,
 				7E02F0031DAD5C67006210B5 /* ViewController.swift in Sources */,
 				7E02F2071DAFE91D006210B5 /* ReporteroViewController.swift in Sources */,
+				7EB8D9811E15B770002F8741 /* Parser.swift in Sources */,
 				7E02F2201DB11B59006210B5 /* Mailer.swift in Sources */,
 				7E02F1F11DAFCB79006210B5 /* SearchViewController.swift in Sources */,
 				7E02F0011DAD5C67006210B5 /* AppDelegate.swift in Sources */,

@@ -11,6 +11,7 @@ target 'CaraotApp' do
   pod 'Alamofire', '~> 4.0'
   pod 'MDHTMLLabel'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  pod 'SwiftString'
 
   target 'CaraotAppTests' do
     inherit! :search_paths

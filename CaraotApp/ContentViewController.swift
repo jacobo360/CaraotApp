@@ -31,14 +31,12 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLbl.text = nTitle
+        titleLbl.text = nTitle?.decodeHTML()
         authorLbl.text = nAuthor
-        contentLbl.htmlText = nContent
+        contentLbl.htmlText = Parser().parseIMG(withString: nContent!).decodeHTML()
         contentLbl.firstLineIndent = 20
         categoryLbl.text = nCategory
-        imgView.kf.setImage(with: URL(string: nImage!), placeholder: UIImage(named: "salto_angel"))
-        categoryLbl.layer.cornerRadius = 7
-        categoryLbl.clipsToBounds = true
+        imgView.kf.setImage(with: URL(string: nImage!), placeholder: UIImage(named: "caraota-background"))
         // Do any additional setup after loading the view.
     }
 

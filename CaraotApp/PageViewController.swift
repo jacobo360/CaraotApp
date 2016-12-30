@@ -71,8 +71,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
             }
         }
         
-        print("http://caraotadigital.net/wp-json/wp/v2/posts?_embed&per_page=10&page=\(page)\(categories)")
-        
         APICaller().getAllNews(url: "http://caraotadigital.net/wp-json/wp/v2/posts?_embed&per_page=10&page=\(page)\(categories)") { response in
             if response.0 != JSON.null && response.0.count != 0 {
                 
