@@ -24,7 +24,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         if defaults.array(forKey: "selectedCategories") == nil {
             redo = true
             performSegue(withIdentifier: "to_categories", sender: self)
-            redo = true
         } else {
         
             dataSource = self

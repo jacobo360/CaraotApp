@@ -33,6 +33,9 @@ class ViewController: RESideMenu {
     func segue(tag: Int) {
         
         switch tag {
+        case 2:
+            performSegue(withIdentifier: "to_buscador", sender: self)
+            break
         case 3:
             performSegue(withIdentifier: "to_reportero", sender: self)
             break

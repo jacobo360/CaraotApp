@@ -23,21 +23,38 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         searchBar.delegate = self
         tblView.delegate = self
         tblView.dataSource = self
+        
+        //Design
+        searchBar.barTintColor = UIColor(red:0.24, green:0.24, blue:0.24, alpha:1.0)
+        let textField = searchBar.value(forKey: "searchField") as? UITextField
+        let glassIconView = textField?.leftView as? UIImageView
+       
+        glassIconView?.image = glassIconView?.image?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        glassIconView?.tintColor = UIColor.white
+        
+        textField?.textColor = UIColor.white
+        textField?.font = UIFont.systemFont(ofSize: 20)
+        textField?.backgroundColor = UIColor.clear
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.title = "Buscador de Noticias"
+        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let text = searchBar.text?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        let url = "http://caraotadigital.org/pruebas/wp-json/wp/v2/posts?_embed&search=\(text!)"
-        print(url)
+        let url = "http://caraotadigital.net/wp-json/wp/v2/posts?_embed&search=\(text!)"
         
         APICaller().getAllNews(url: url) { response in
             if response.0 != JSON.null && response.0.count != 0 {
                 self.results.removeAll(keepingCapacity: false)
                 for i in 0..<response.0.count {
                     let post = News(
-                        title: response.0[i]["title"]["rendered"].stringValue,
+                        title: response.0[i]["title"]["rendered"].stringValue.decodeHTML(),
                         imageUrl:response.0[i]["_embedded"]["wp:featuredmedia"][0]["source_url"].stringValue,
-                        content:response.0[i]["content"]["rendered"].stringValue,
+                        content:response.0[i]["content"]["rendered"].stringValue.decodeHTML(),
                         postId:response.0[i]["id"].intValue,
                         postDate:response.0[i]["date"].stringValue,
                         postURL:response.0[i]["link"].stringValue,

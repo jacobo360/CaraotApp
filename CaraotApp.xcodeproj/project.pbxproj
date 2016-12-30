@@ -326,7 +326,6 @@
 				7E02F1F01DAFCB79006210B5 /* SearchViewController.swift */,
 				7E02F0371DAD6F20006210B5 /* PageViewController.swift */,
 				7E02F0391DAD6FAB006210B5 /* ContentViewController.swift */,
-				7E02F03F1DAF2AF6006210B5 /* APICaller.swift */,
 				7EB8D96E1E15B753002F8741 /* Custom Classes */,
 				7E02F0071DAD5C67006210B5 /* Assets.xcassets */,
 				7E02F0041DAD5C67006210B5 /* Main.storyboard */,
@@ -404,6 +403,7 @@
 			children = (
 				7E02F03D1DAF2A85006210B5 /* News.swift */,
 				7EB8D9801E15B770002F8741 /* Parser.swift */,
+				7E02F03F1DAF2AF6006210B5 /* APICaller.swift */,
 			);
 			name = "Custom Classes";
 			sourceTree = "<group>";

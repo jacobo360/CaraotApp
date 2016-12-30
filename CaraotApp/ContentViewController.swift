@@ -33,8 +33,14 @@ class ContentViewController: UIViewController {
         
         titleLbl.text = nTitle?.decodeHTML()
         authorLbl.text = nAuthor
-        contentLbl.htmlText = Parser().parseIMG(withString: nContent!).decodeHTML()
+        
+        //TRYING WITH ATTRIBUTED
+        contentLbl.attributedText = try! NSAttributedString(
+            data: nContent!.decodeHTML().data(using: String.Encoding.unicode, allowLossyConversion: true)!,
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil)
         contentLbl.firstLineIndent = 20
+        
         categoryLbl.text = nCategory
         imgView.kf.setImage(with: URL(string: nImage!), placeholder: UIImage(named: "caraota-background"))
         // Do any additional setup after loading the view.
@@ -53,7 +59,6 @@ class ContentViewController: UIViewController {
         }
         
     }
-    
 
     /*
     // MARK: - Navigation

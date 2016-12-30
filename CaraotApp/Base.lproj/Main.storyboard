@@ -31,6 +31,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="Z1X-lW-HFU" kind="show" identifier="to_reportero" id="buS-1q-2UH"/>
+                        <segue destination="Bsb-5W-VeX" kind="show" identifier="to_buscador" id="mYl-xG-d8h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -311,13 +312,13 @@
                                                     <constraint firstAttribute="width" constant="30" id="7er-fA-DEd"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rby-R5-flT">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rby-R5-flT">
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                                 <state key="normal" title="Buscador de Noticias">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Bsb-5W-VeX" kind="show" id="lVN-a2-tVZ"/>
+                                                    <action selector="segueFromSide:" destination="vVR-y5-TPO" eventType="touchUpInside" id="ReQ-eL-NWN"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -394,20 +395,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Sx9-m8-9LL">
-                                <color key="barTintColor" red="0.031372549020000001" green="0.67843137249999996" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hh" translatesAutoresizingMaskIntoConstraints="NO" id="HN8-pL-Vsu"/>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEg-zE-h4s">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <searchBar contentMode="redraw" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sx9-m8-9LL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="E6X-6x-0El"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="salto_angel" translatesAutoresizingMaskIntoConstraints="NO" id="HN8-pL-Vsu"/>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="19c-eC-qLM">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="proto" rowHeight="60" id="lIk-4j-afT">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lIk-4j-afT" id="y5x-ie-rp4">
-                                            <frame key="frameInset" width="1000" height="60"/>
+                                            <frame key="frameInset" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="1000" text="  Label  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPy-Fr-6IC">
@@ -418,6 +425,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="Label lorem ipson whatever this means and another line" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLO-q0-5a3">
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -431,28 +439,26 @@
                                                 <constraint firstItem="vPy-Fr-6IC" firstAttribute="centerY" secondItem="y5x-ie-rp4" secondAttribute="centerY" id="xWp-ob-b5O"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fms-xb-tvR">
-                                <color key="backgroundColor" red="0.15864735841751099" green="0.69194501638412476" blue="0.35365286469459534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6Bi-Fh-zVr" firstAttribute="top" secondItem="HN8-pL-Vsu" secondAttribute="bottom" id="06X-cq-rM0"/>
-                            <constraint firstItem="Sx9-m8-9LL" firstAttribute="top" secondItem="Fms-xb-tvR" secondAttribute="bottom" constant="-1" id="KkT-fB-uJ7"/>
+                            <constraint firstItem="HN8-pL-Vsu" firstAttribute="top" secondItem="tJ7-wb-IAL" secondAttribute="top" id="23W-jp-eqg"/>
+                            <constraint firstItem="rEg-zE-h4s" firstAttribute="bottom" secondItem="HN8-pL-Vsu" secondAttribute="bottom" id="5fJ-YR-HJ9"/>
+                            <constraint firstItem="rEg-zE-h4s" firstAttribute="leading" secondItem="HN8-pL-Vsu" secondAttribute="leading" id="Hn3-Qc-ctg"/>
                             <constraint firstItem="6Bi-Fh-zVr" firstAttribute="top" secondItem="19c-eC-qLM" secondAttribute="bottom" id="PZ1-3l-tPt"/>
-                            <constraint firstItem="19c-eC-qLM" firstAttribute="top" secondItem="Sx9-m8-9LL" secondAttribute="bottom" id="Qgc-wx-Xnf"/>
+                            <constraint firstItem="19c-eC-qLM" firstAttribute="top" secondItem="Sx9-m8-9LL" secondAttribute="bottom" constant="8" id="Qgc-wx-Xnf"/>
+                            <constraint firstItem="rEg-zE-h4s" firstAttribute="top" secondItem="HN8-pL-Vsu" secondAttribute="top" id="Sau-NX-IH3"/>
                             <constraint firstAttribute="trailing" secondItem="19c-eC-qLM" secondAttribute="trailing" id="XcK-ik-kgD"/>
-                            <constraint firstItem="HN8-pL-Vsu" firstAttribute="top" secondItem="Sx9-m8-9LL" secondAttribute="bottom" id="g2K-Lq-0yD"/>
-                            <constraint firstItem="Sx9-m8-9LL" firstAttribute="leading" secondItem="tJ7-wb-IAL" secondAttribute="leading" id="hb6-yi-WCM"/>
-                            <constraint firstItem="Sx9-m8-9LL" firstAttribute="top" secondItem="tJ7-wb-IAL" secondAttribute="top" constant="20" id="i1A-EL-NVg"/>
+                            <constraint firstItem="Sx9-m8-9LL" firstAttribute="leading" secondItem="tJ7-wb-IAL" secondAttribute="leading" constant="8" id="hb6-yi-WCM"/>
+                            <constraint firstItem="Sx9-m8-9LL" firstAttribute="top" secondItem="tJ7-wb-IAL" secondAttribute="top" constant="70" id="i1A-EL-NVg"/>
                             <constraint firstItem="HN8-pL-Vsu" firstAttribute="leading" secondItem="tJ7-wb-IAL" secondAttribute="leading" id="oX1-hW-kg9"/>
-                            <constraint firstAttribute="trailing" secondItem="Fms-xb-tvR" secondAttribute="trailing" id="olC-Ej-Xmp"/>
-                            <constraint firstItem="Fms-xb-tvR" firstAttribute="top" secondItem="tJ7-wb-IAL" secondAttribute="top" id="pzh-i6-uAu"/>
-                            <constraint firstAttribute="trailing" secondItem="Sx9-m8-9LL" secondAttribute="trailing" id="x8c-y6-ILL"/>
-                            <constraint firstItem="Fms-xb-tvR" firstAttribute="leading" secondItem="tJ7-wb-IAL" secondAttribute="leading" id="xtP-lU-Ssh"/>
+                            <constraint firstItem="rEg-zE-h4s" firstAttribute="trailing" secondItem="HN8-pL-Vsu" secondAttribute="trailing" id="ub9-g8-H09"/>
+                            <constraint firstAttribute="trailing" secondItem="Sx9-m8-9LL" secondAttribute="trailing" constant="8" id="x8c-y6-ILL"/>
                             <constraint firstAttribute="trailing" secondItem="HN8-pL-Vsu" secondAttribute="trailing" id="y6d-gN-FDD"/>
                             <constraint firstItem="19c-eC-qLM" firstAttribute="leading" secondItem="tJ7-wb-IAL" secondAttribute="leading" id="zSo-a3-KVh"/>
                         </constraints>
@@ -655,7 +661,6 @@
         <image name="ic_check_white" width="24" height="24"/>
         <image name="mail" width="24" height="24"/>
         <image name="perm" width="24" height="24"/>
-        <image name="salto_angel" width="1024" height="768"/>
         <image name="search" width="24" height="24"/>
         <image name="tintori" width="963" height="541"/>
     </resources>
