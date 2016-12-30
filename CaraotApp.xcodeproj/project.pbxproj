@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		75190BF2CD7188B1CDC90183 /* Pods_CaraotAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F885FE16F8BBBC8E07C4222 /* Pods_CaraotAppUITests.framework */; };
+		7E01BC911E16A8C300314B0E /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E01BC901E16A8C300314B0E /* SideViewController.swift */; };
 		7E02F0011DAD5C67006210B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0001DAD5C67006210B5 /* AppDelegate.swift */; };
 		7E02F0031DAD5C67006210B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02F0021DAD5C67006210B5 /* ViewController.swift */; };
 		7E02F0061DAD5C67006210B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E02F0041DAD5C67006210B5 /* Main.storyboard */; };
@@ -218,6 +219,7 @@
 		2361ADCEFFAB29BEE0425805 /* Pods-CaraotApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotApp/Pods-CaraotApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2CCF3A72F40C6B2FB9BDFFEB /* Pods-CaraotApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotApp/Pods-CaraotApp.release.xcconfig"; sourceTree = "<group>"; };
 		3A100357965DCAAA919E5599 /* Pods-CaraotAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaraotAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaraotAppUITests/Pods-CaraotAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7E01BC901E16A8C300314B0E /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		7E02EFFD1DAD5C67006210B5 /* CaraotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaraotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E02F0001DAD5C67006210B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E02F0021DAD5C67006210B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			children = (
 				7E02F0001DAD5C67006210B5 /* AppDelegate.swift */,
 				7E02F0021DAD5C67006210B5 /* ViewController.swift */,
+				7E01BC901E16A8C300314B0E /* SideViewController.swift */,
 				7EB8D94F1E146A95002F8741 /* CategoryChooserViewController.swift */,
 				7E02F2061DAFE91D006210B5 /* ReporteroViewController.swift */,
 				7E02F21F1DB11B59006210B5 /* Mailer.swift */,
@@ -861,6 +864,7 @@
 				7E02F0341DAD6BDE006210B5 /* SwipeViewController.swift in Sources */,
 				7EB8D9501E146A95002F8741 /* CategoryChooserViewController.swift in Sources */,
 				7E02F0401DAF2AF6006210B5 /* APICaller.swift in Sources */,
+				7E01BC911E16A8C300314B0E /* SideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

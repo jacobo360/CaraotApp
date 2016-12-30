@@ -30,6 +30,17 @@ class ViewController: RESideMenu {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func segue(tag: Int) {
+        
+        switch tag {
+        case 3:
+            performSegue(withIdentifier: "to_reportero", sender: self)
+            break
+        default:
+            break
+        }
+        
+    }
+    
 }
 

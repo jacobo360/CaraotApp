@@ -29,6 +29,9 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="leftMenuViewStoryboardID" value="backViewController"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="parallaxEnabled" value="NO"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="Z1X-lW-HFU" kind="show" identifier="to_reportero" id="buS-1q-2UH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,10 +269,10 @@
             </objects>
             <point key="canvasLocation" x="1740" y="-174.06296851574214"/>
         </scene>
-        <!--View Controller-->
+        <!--Side View Controller-->
         <scene sceneID="Tpz-eg-16I">
             <objects>
-                <viewController storyboardIdentifier="backViewController" id="vVR-y5-TPO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="backViewController" id="vVR-y5-TPO" customClass="SideViewController" customModule="CaraotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kxh-eh-SqQ"/>
                         <viewControllerLayoutGuide type="bottom" id="q1J-Pb-1O6"/>
@@ -329,13 +332,13 @@
                                                     <constraint firstAttribute="width" constant="30" id="eu1-AR-fhU"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-fK-NWL">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-fK-NWL">
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                                 <state key="normal" title="Reportero Ciudadano">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Z1X-lW-HFU" kind="show" id="vDd-Vh-5s0"/>
+                                                    <action selector="segueFromSide:" destination="vVR-y5-TPO" eventType="touchUpInside" id="35S-F3-PLc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -401,10 +404,10 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="proto" rowHeight="60" id="lIk-4j-afT">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lIk-4j-afT" id="y5x-ie-rp4">
-                                            <frame key="frameInset" width="375" height="59"/>
+                                            <frame key="frameInset" width="1000" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="1000" text="  Label  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPy-Fr-6IC">
