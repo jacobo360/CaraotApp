@@ -13,11 +13,15 @@ class Parser {
     
     func parseIMG(withString: String) -> String {
         
-        var newString = ""
+        var newString = withString
         
-        for _ in 0...5 {
-            newString = innerParse(withString: withString)
+        for _ in 0..<5 {
+            newString = innerParse(withString: newString)
         }
+        
+        
+        newString = parseRecom(withString: newString)
+        newString = parseStyle(withString: newString)
     
         return newString
         
@@ -28,9 +32,8 @@ class Parser {
         var newString = ""
         
         if withString.containsSub("<div") && withString.containsSub("</div>") {
-            newString = withString[0..<withString.indexOf("<div")!]
-                + withString.substring(withString.indexOf("</div>")! + 6, length: withString.characters.count - (withString.indexOf("</div>")! + 6))
-            newString = parseStyle(withString: newString)
+            newString = withString[0..<withString.indexOf("<div")!].trimmed()
+                + withString.substring(withString.indexOf("</div>")! + 6, length: withString.characters.count - (withString.indexOf("</div>")! + 6)).trimmed()
             
             return newString
         } else {
@@ -44,9 +47,8 @@ class Parser {
         var newString = ""
         
         if withString.containsSub("<style") && withString.containsSub("</style>") {
-            print(withString.characters.count)
-            newString = withString[0..<withString.indexOf("<style")!]
-                + withString.substring(withString.indexOf("</style>")! + 8, length: withString.characters.count - (withString.indexOf("</style>")! + 8))
+            newString = withString[0..<withString.indexOf("<style")!].trimmed()
+                + withString.substring(withString.indexOf("</style>")! + 8, length: withString.characters.count - (withString.indexOf("</style>")! + 8)).trimmed()
         } else {
             return withString
         }
@@ -59,4 +61,16 @@ class Parser {
         
     }
     
+    func parseRecom(withString: String) -> String {
+        
+        var newString = ""
+        
+        if withString.containsSub("Le puede interesar:") {
+            newString = withString[0..<(withString.indexOf("Le puede interesar:")! - 11)]
+        } else {
+            return withString
+        }
+    
+        return newString
+    }
 }
