@@ -33,9 +33,7 @@ class ContentViewController: UIViewController {
         
         titleLbl.text = nTitle?.decodeHTML()
         authorLbl.text = nAuthor
-//        contentLbl.htmlText = Parser().parseIMG(withString: nContent!).decodeHTML()
-        //While using excerpts
-        contentLbl.htmlText = nContent!.decodeHTML()
+        contentLbl.htmlText = Parser().parseIMG(withString: nContent!).decodeHTML()
         contentLbl.firstLineIndent = 20
         categoryLbl.text = nCategory
         imgView.kf.setImage(with: URL(string: nImage!), placeholder: UIImage(named: "caraota-background"))
