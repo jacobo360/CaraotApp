@@ -34,16 +34,15 @@ class ContentViewController: UIViewController {
         titleLbl.text = nTitle?.decodeHTML()
         authorLbl.text = nAuthor
         
-        //TRYING WITH ATTRIBUTED
-        let attributedT = try! NSAttributedString(
-            data: nContent!.decodeHTML().data(using: String.Encoding.unicode, allowLossyConversion: true)!,
-            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSFontAttributeName: UIFont(name: "Helvetica", size: 16.0)!],
-            documentAttributes: nil)
+        var str: NSMutableAttributedString = NSMutableAttributedString(string: "")
         
-        let mutableT = NSMutableAttributedString(attributedString: attributedT)
-        mutableT.setAttributes([NSFontAttributeName: UIFont(name: "Helvetica", size: 16.0)!], range: NSRange(location: 0, length: mutableT.string.characters.count))
+        do {
+            str = try NSMutableAttributedString(HTMLString: nContent!.decodeHTML(), font: UIFont(name: "Helvetica", size: 16.0)!)!
+        } catch {
+            print("could not parse")
+        }
         
-        contentLbl.attributedText = mutableT
+        contentLbl.attributedText = str
         contentLbl.firstLineIndent = 20
         
         categoryLbl.text = nCategory
