@@ -1,19 +1,17 @@
 //
-//  SideViewController.swift
+//  LoaderViewController.swift
 //  CaraotApp
 //
-//  Created by Jacobo Koenig on 12/30/16.
+//  Created by Jacobo Koenig on 12/31/16.
 //  Copyright © 2016 Jacobo Koenig. All rights reserved.
 //
 
 import UIKit
 
-class SideViewController: UIViewController {
+class LoaderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,13 +19,7 @@ class SideViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func segueFromSide(_ sender: UIButton) {
-    
-        let parent = self.parent as! ViewController
-        parent.segue(tag: sender.tag)
-    
-    }
-    
+
     /*
     // MARK: - Navigation
 

@@ -35,15 +35,19 @@ class ContentViewController: UIViewController {
         authorLbl.text = nAuthor
         
         //TRYING WITH ATTRIBUTED
-        contentLbl.attributedText = try! NSAttributedString(
+        let attributedT = try! NSAttributedString(
             data: nContent!.decodeHTML().data(using: String.Encoding.unicode, allowLossyConversion: true)!,
-            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSFontAttributeName: UIFont(name: "Helvetica", size: 16.0)!],
             documentAttributes: nil)
+        
+        let mutableT = NSMutableAttributedString(attributedString: attributedT)
+        mutableT.setAttributes([NSFontAttributeName: UIFont(name: "Helvetica", size: 16.0)!], range: NSRange(location: 0, length: mutableT.string.characters.count))
+        
+        contentLbl.attributedText = mutableT
         contentLbl.firstLineIndent = 20
         
         categoryLbl.text = nCategory
         imgView.kf.setImage(with: URL(string: nImage!), placeholder: UIImage(named: "caraota-background"))
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -60,14 +64,34 @@ class ContentViewController: UIViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension NSAttributedString {
+    
+    public convenience init?(HTMLString html: String, font: UIFont? = nil) throws {
+        
+        let options: [String: Any] = [
+            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+            NSCharacterEncodingDocumentAttribute: NSNumber(value: String.Encoding.utf8.rawValue)
+        ]
+        
+        guard let data = html.data(using: .utf8, allowLossyConversion: true) else {
+            throw NSError(domain: "Parse Error", code: 0, userInfo: nil)
+        }
+        
+        
+        if let font = font {
+            guard let attr = try? NSMutableAttributedString(data: data, options: options, documentAttributes: nil) else {
+                throw NSError(domain: "Parse Error", code: 0, userInfo: nil)
+            }
+            var attrs = attr.attributes(at: 0, effectiveRange: nil)
+            attrs[NSFontAttributeName] = font
+            attr.setAttributes(attrs, range: NSRange(location: 0, length: attr.length))
+            self.init(attributedString: attr)
+        } else {
+            try? self.init(data: data, options: options, documentAttributes: nil)
+        }
+        
     }
-    */
-
+    
 }

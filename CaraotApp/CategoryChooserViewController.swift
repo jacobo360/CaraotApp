@@ -95,6 +95,7 @@ class CategoryChooserViewController: UIViewController, UICollectionViewDataSourc
             if response.0 != JSON.null && response.0.count != 0 {
                 for i in 0..<response.0.count {
                     self.categories[response.0[i]["id"].intValue] = response.0[i]["name"].stringValue
+                    defaults.set(response.0[i]["name"].stringValue, forKey: "cat" + response.0[i]["id"].stringValue)
                 }
             }
             

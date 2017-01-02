@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import MDHTMLLabel
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
@@ -54,7 +55,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
                     let post = News(
                         title: response.0[i]["title"]["rendered"].stringValue.decodeHTML(),
                         imageUrl:response.0[i]["_embedded"]["wp:featuredmedia"][0]["source_url"].stringValue,
-                        content:response.0[i]["content"]["rendered"].stringValue.decodeHTML(),
+                        content:response.0[i]["excerpt"]["rendered"].stringValue.decodeHTML(),
                         postId:response.0[i]["id"].intValue,
                         postDate:response.0[i]["date"].stringValue,
                         postURL:response.0[i]["link"].stringValue,
@@ -77,13 +78,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "proto")
-        let category = cell?.viewWithTag(1) as! UILabel
-        let nTitle = cell?.viewWithTag(2) as! UILabel
+        let category = cell?.viewWithTag(2) as! MDHTMLLabel
+        let nTitle = cell?.viewWithTag(1) as! UILabel
         
         category.layer.cornerRadius = 7
         category.clipsToBounds = true
         
-        category.text = "  " + results[indexPath.row].categoryName! + "  "
+        category.htmlText = results[indexPath.row].content!
         nTitle.text = results[indexPath.row].nTitle
         
         return cell!

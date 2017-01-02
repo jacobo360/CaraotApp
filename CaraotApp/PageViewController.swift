@@ -36,20 +36,14 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
             getNews(andReload: true)
             
         }
-    }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        //If comming from category selection, redo search
-//        if redo {
-//            newsArray = []
-//            setViewControllers([viewControllerAt(index: 0)],
-//                               direction: .forward,
-//                               animated: true,
-//                               completion: nil)
-//            getNews(andReload: true)
-//            redo = false
-//        }
-//    }
+        //Design
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu_white"), style: .plain, target: self, action: #selector(ViewController.menuTapped))
+    }
     
     func getNews(andReload: Bool) {
         
@@ -180,16 +174,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         return cVC
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        print(size)
+    
     }
-    */
-
 
 }
