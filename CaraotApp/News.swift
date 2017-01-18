@@ -57,8 +57,6 @@ class News: NSObject, NSCoding {
         aCoder.encode(content!, forKey: "content")
         aCoder.encode(authorLink, forKey: "authorLink")
         aCoder.encode(categoryName, forKey: "categoryName")
-        
-        
     }
     
 }

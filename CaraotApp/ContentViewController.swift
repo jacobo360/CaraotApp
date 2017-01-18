@@ -19,6 +19,8 @@ class ContentViewController: UIViewController {
     var nContent: String?
     var nCategory: String?
     var nImage: String?
+    var isFavorite: Bool = false
+    var news: News?
     
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var titleLbl: UILabel!
@@ -62,7 +64,7 @@ class ContentViewController: UIViewController {
         }
         
     }
-
+    
 }
 
 extension NSAttributedString {

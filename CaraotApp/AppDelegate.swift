@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        registerForPushNotifications(application: application)
         
         return true
     }
@@ -42,6 +45,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func registerForPushNotifications(application: UIApplication) {
+        
+//        if #available(iOS 10.0, *) {
+//            let center = UNUserNotificationCenter.current()
+//            center.delegate = self
+//            center.requestAuthorization(options: [.badge, .alert, .sound]) { (granted, error) in
+//                
+//            }
+//        } else {
+            // Fallback on earlier versions
+            application.delegate = self
+            application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .alert, .sound], categories: nil))
+            application.registerForRemoteNotifications()
+//        }
+
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print(deviceTokenString)
+        
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        
+        print("ERROR: \(error)")
+    
+    }
 
 }
 

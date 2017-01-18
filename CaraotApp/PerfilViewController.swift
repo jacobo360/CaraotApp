@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PerfilViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class PerfilViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var catLbl: UILabel!
     @IBOutlet weak var favLbl: UILabel!
@@ -59,6 +59,23 @@ class PerfilViewController: UIViewController, UICollectionViewDataSource, UIColl
             
         default:
             return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView == favCollView {
+            
+            if collectionView.frame.height < 190 {
+                return CGSize(width: collectionView.frame.width*12/19, height: collectionView.frame.height - 8)
+            } else {
+                return CGSize(width: 120, height: 190)
+            }
+            
+        } else {
+         
+            return CGSize(width: 125, height: 25)
+            
         }
     }
     

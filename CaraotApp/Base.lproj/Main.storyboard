@@ -420,7 +420,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lIk-4j-afT" id="y5x-ie-rp4">
-                                            <frame key="frameInset" width="375" height="59.5"/>
+                                            <frame key="frameInset" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="Label lorem ipson whatever this means and another line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLO-q0-5a3">
@@ -509,7 +509,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zI4-dP-hHV">
                                 <color key="backgroundColor" red="0.89405053850000005" green="0.8942306042" blue="0.88968032600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="zI4-dP-hHV" secondAttribute="height" multiplier="500:320" id="5nn-mb-dxX"/>
+                                    <constraint firstAttribute="width" secondItem="zI4-dP-hHV" secondAttribute="height" multiplier="500:320" priority="999" id="5nn-mb-dxX"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-Zt-qBf">
@@ -567,6 +567,7 @@
                             <constraint firstItem="7cu-x8-W5x" firstAttribute="leading" secondItem="FIb-sZ-PXj" secondAttribute="leading" id="nyC-Ex-jP0"/>
                             <constraint firstItem="MA8-iP-847" firstAttribute="height" secondItem="zI4-dP-hHV" secondAttribute="height" id="nyR-YY-amD"/>
                             <constraint firstItem="ahQ-LS-sfU" firstAttribute="top" secondItem="ShW-0Z-aEf" secondAttribute="bottom" constant="20" id="pLF-Ue-hEN"/>
+                            <constraint firstItem="MA8-iP-847" firstAttribute="height" relation="lessThanOrEqual" secondItem="Gn4-W5-SN3" secondAttribute="height" multiplier="0.35" id="rXK-Ra-5KW"/>
                             <constraint firstItem="zI4-dP-hHV" firstAttribute="leading" secondItem="oz4-1P-x4l" secondAttribute="leading" id="rjd-rm-fU3"/>
                             <constraint firstItem="ahQ-LS-sfU" firstAttribute="top" secondItem="DzO-JP-7In" secondAttribute="bottom" id="t3W-yc-ARy"/>
                             <constraint firstAttribute="trailing" secondItem="Gn4-W5-SN3" secondAttribute="trailing" id="tM3-hH-xF9"/>
@@ -724,6 +725,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziO-bQ-SDy">
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Editar">
                                     <color key="titleColor" red="0.2235064209" green="0.81868489580000003" blue="0.2234981358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -738,7 +740,6 @@
                             <constraint firstItem="aMg-3p-Mxf" firstAttribute="leading" secondItem="tVO-k0-JXB" secondAttribute="leading" constant="20" id="1zf-js-Rox"/>
                             <constraint firstItem="fuf-vg-r3d" firstAttribute="leading" secondItem="tVO-k0-JXB" secondAttribute="leadingMargin" id="5WX-2J-0wu"/>
                             <constraint firstItem="vav-o1-sxL" firstAttribute="top" secondItem="vQX-W4-MWM" secondAttribute="bottom" constant="20" id="5ry-Q8-YIS"/>
-                            <constraint firstItem="ziO-bQ-SDy" firstAttribute="centerY" secondItem="aMg-3p-Mxf" secondAttribute="centerY" id="A7u-Vy-Qje"/>
                             <constraint firstItem="vQX-W4-MWM" firstAttribute="bottom" secondItem="n2N-EY-UEm" secondAttribute="bottom" id="Ari-s7-TgH"/>
                             <constraint firstItem="n2N-EY-UEm" firstAttribute="leading" secondItem="tVO-k0-JXB" secondAttribute="leading" id="BJ0-9L-eFd"/>
                             <constraint firstAttribute="trailing" secondItem="ziO-bQ-SDy" secondAttribute="trailing" constant="20" id="Chs-Gy-BZh"/>
@@ -746,17 +747,18 @@
                             <constraint firstItem="bcM-X8-RGF" firstAttribute="centerX" secondItem="vQX-W4-MWM" secondAttribute="centerX" id="D5k-nn-bR2"/>
                             <constraint firstItem="bcM-X8-RGF" firstAttribute="bottom" secondItem="vQX-W4-MWM" secondAttribute="bottom" constant="-30" id="K7a-gk-q9t"/>
                             <constraint firstAttribute="trailing" secondItem="n2N-EY-UEm" secondAttribute="trailing" id="LjD-eb-Zd3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aMg-3p-Mxf" secondAttribute="trailing" id="Mrh-fA-neW"/>
                             <constraint firstItem="vav-o1-sxL" firstAttribute="leading" secondItem="tVO-k0-JXB" secondAttribute="leadingMargin" id="Nru-iw-RsI"/>
                             <constraint firstItem="vQX-W4-MWM" firstAttribute="trailing" secondItem="n2N-EY-UEm" secondAttribute="trailing" id="Uca-Wx-XtN"/>
                             <constraint firstItem="aMg-3p-Mxf" firstAttribute="top" secondItem="vav-o1-sxL" secondAttribute="bottom" constant="8" id="VZr-sl-lWB"/>
                             <constraint firstItem="vQX-W4-MWM" firstAttribute="top" secondItem="n2N-EY-UEm" secondAttribute="top" id="Whg-0D-T6j"/>
                             <constraint firstItem="n2N-EY-UEm" firstAttribute="height" secondItem="tVO-k0-JXB" secondAttribute="height" multiplier="0.4" id="aBp-yT-a6c"/>
-                            <constraint firstItem="ziO-bQ-SDy" firstAttribute="leading" secondItem="aMg-3p-Mxf" secondAttribute="trailing" constant="8" id="dkY-sr-R9W"/>
                             <constraint firstItem="vQX-W4-MWM" firstAttribute="leading" secondItem="n2N-EY-UEm" secondAttribute="leading" id="dp4-sL-lBZ"/>
                             <constraint firstItem="fuf-vg-r3d" firstAttribute="trailing" secondItem="tVO-k0-JXB" secondAttribute="trailingMargin" id="oLK-mW-dQW"/>
                             <constraint firstItem="sFs-3F-w59" firstAttribute="top" secondItem="aMg-3p-Mxf" secondAttribute="bottom" constant="20" id="pOz-rz-Nrd"/>
                             <constraint firstItem="sFs-3F-w59" firstAttribute="leading" secondItem="tVO-k0-JXB" secondAttribute="leadingMargin" id="qMu-ze-HeJ"/>
                             <constraint firstItem="n2N-EY-UEm" firstAttribute="top" secondItem="tVO-k0-JXB" secondAttribute="top" id="rLT-5Z-UyL"/>
+                            <constraint firstItem="ziO-bQ-SDy" firstAttribute="centerY" secondItem="vav-o1-sxL" secondAttribute="centerY" id="u56-C5-oa9"/>
                         </constraints>
                     </view>
                     <connections>
@@ -778,7 +780,7 @@
                         <viewControllerLayoutGuide type="top" id="Src-Zt-SPB"/>
                         <viewControllerLayoutGuide type="bottom" id="Vrx-zO-yBE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Clc-be-VQ4">
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="Clc-be-VQ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

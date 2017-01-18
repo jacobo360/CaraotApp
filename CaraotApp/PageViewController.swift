@@ -42,7 +42,17 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu_white"), style: .plain, target: self, action: #selector(ViewController.menuTapped))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if redo {
+            setViewControllers([viewControllerAt(index: 0)],
+                               direction: .forward,
+                               animated: true,
+                               completion: nil)
+            
+            getNews(andReload: true)
+        }
     }
     
     func getNews(andReload: Bool) {
@@ -113,6 +123,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
                                             animated: false,
                                             completion: nil)
                 }
+                
             }
         }
     }
@@ -164,6 +175,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let cVC: ContentViewController = storyboard.instantiateViewController(withIdentifier: "ContentVC") as! ContentViewController
         
+        (parent as! ViewController).news = newsArray[index]
+        (parent as! ViewController).setRightNavItems()
         cVC.pageIndex = index
         cVC.nTitle = newsArray[index].nTitle
         cVC.nAuthor = newsArray[index].authorLink
@@ -172,12 +185,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         cVC.nImage = newsArray[index].imageUrl
         
         return cVC
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        
-        print(size)
-    
     }
 
 }
