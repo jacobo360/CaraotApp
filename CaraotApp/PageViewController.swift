@@ -23,6 +23,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.isUserInteractionEnabled = false
+        
         if defaults.array(forKey: "selectedCategories") == nil {
             redo = true
             performSegue(withIdentifier: "to_categories", sender: self)
@@ -118,7 +120,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
                 } else {
                     let currentIndex = (self.childViewControllers[0] as! ContentViewController).pageIndex! + 1
                     print("CURRENT INDEX IS \(currentIndex)")
-//                    print("CURRENT VCs ARE \(self.childViewControllers)")
                     self.setViewControllers([self.viewControllerAt(index: currentIndex)],
                                             direction: .forward,
                                             animated: false,
@@ -131,38 +132,43 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        let vc = viewController as! ContentViewController
-        var index = vc.pageIndex
+        if let vc = viewController as? ContentViewController {
+            var index = vc.pageIndex
         
-        if index == 0 || index == NSNotFound {
-            return nil
+            if index == 0 || index == NSNotFound {
+                return nil
+            }
+        
+            index! -= 1
+            return viewControllerAt(index: index!)
         }
         
-        index! -= 1
-        return viewControllerAt(index: index!)
+        return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        let vc = viewController as? ContentViewController
-        var index = vc?.pageIndex
+        if let vc = viewController as? ContentViewController {
+            var index = vc.pageIndex
         
-        if index == nil || index == NSNotFound {
-            return nil
+            if index == nil || index == NSNotFound {
+                return nil
+            }
+            
+            index! += 1
+            
+            if index == self.newsArray.count {
+                return nil
+            }
+            
+            if index == self.newsArray.count - 2 {
+                getNews(andReload: false)
+            }
+            
+            return viewControllerAt(index: index!)
         }
         
-        index! += 1
-        
-        if index == self.newsArray.count {
-            return nil
-        }
-        
-        if index == self.newsArray.count - 2 {
-            getNews(andReload: false)
-        }
-        
-        return viewControllerAt(index: index!)
-        
+        return nil
     }
     
     func viewControllerAt(index: Int) -> UIViewController {
@@ -170,22 +176,28 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         if newsArray.count == 0 || index >= newsArray.count {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let lVC = storyboard.instantiateViewController(withIdentifier: "LoadingView")
+            
             return lVC
+        
+        } else {
+        
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let cVC: ContentViewController = storyboard.instantiateViewController(withIdentifier: "ContentVC") as! ContentViewController
+            
+            (parent as! ViewController).news = newsArray[index]
+            (parent as! ViewController).setRightNavItems()
+            cVC.pageIndex = index
+            cVC.nTitle = newsArray[index].nTitle
+            cVC.nAuthor = newsArray[index].authorLink
+            cVC.nCategory = "  " + newsArray[index].categoryName! + "  "
+            cVC.nContent = newsArray[index].content
+            cVC.nImage = newsArray[index].imageUrl
+            
+            self.view.isUserInteractionEnabled = true
+            return cVC
+            
         }
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let cVC: ContentViewController = storyboard.instantiateViewController(withIdentifier: "ContentVC") as! ContentViewController
-        
-        (parent as! ViewController).news = newsArray[index]
-        (parent as! ViewController).setRightNavItems()
-        cVC.pageIndex = index
-        cVC.nTitle = newsArray[index].nTitle
-        cVC.nAuthor = newsArray[index].authorLink
-        cVC.nCategory = "  " + newsArray[index].categoryName! + "  "
-        cVC.nContent = newsArray[index].content
-        cVC.nImage = newsArray[index].imageUrl
-        
-        return cVC
     }
 
     func createAndLoadInterstitial() -> GADInterstitial {

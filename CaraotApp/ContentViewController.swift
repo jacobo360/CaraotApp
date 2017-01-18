@@ -77,6 +77,17 @@ class ContentViewController: UIViewController {
         }
     }
     
+    @IBAction func verMasBtn(_ sender: Any) {
+    
+        let url = URL(string: news!.postURL!)!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+        
+    }
+    
 }
 
 extension NSAttributedString {

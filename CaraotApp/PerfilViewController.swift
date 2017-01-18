@@ -10,6 +10,8 @@ import UIKit
 
 class PerfilViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
+    var news: [News] = []
+    
     @IBOutlet weak var catLbl: UILabel!
     @IBOutlet weak var favLbl: UILabel!
     @IBOutlet weak var catCollView: UICollectionView!
@@ -27,15 +29,29 @@ class PerfilViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.isNavigationBarHidden = false
         
         if let categories = defaults.array(forKey: "selectedCategories") as? [Int] {
             catLbl.text = String(categories.count)
+        }
+        
+        if let data = defaults.object(forKey: "favoriteArticles") as? Data {
+            
+            let favs = NSKeyedUnarchiver.unarchiveObject(with: data) as! [News]
+            
+            favLbl.text = String(favs.count)
+            
+            news = favs
         }
         
         if let favorites = defaults.array(forKey: "favoriteArticles") as? [News] {
             favLbl.text = String(favorites.count)
         }
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -51,8 +67,8 @@ class PerfilViewController: UIViewController, UICollectionViewDataSource, UIColl
             
         case favCollView:
             
-            if let favorites = defaults.array(forKey: "favoriteArticles") {
-                return favorites.count
+            if news.count > 0 {
+                return news.count
             } else {
                 return 1
             }
@@ -66,11 +82,11 @@ class PerfilViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         if collectionView == favCollView {
             
-            if collectionView.frame.height < 190 {
-                return CGSize(width: collectionView.frame.width*12/19, height: collectionView.frame.height - 8)
-            } else {
-                return CGSize(width: 120, height: 190)
-            }
+//            if collectionView.frame.height < 190 {
+                return CGSize(width: collectionView.frame.width*12/19, height: collectionView.frame.height - 16)
+//            } else {
+//                return CGSize(width: 120, height: 190)
+//            }
             
         } else {
          
@@ -101,15 +117,15 @@ class PerfilViewController: UIViewController, UICollectionViewDataSource, UIColl
             let background = cell.viewWithTag(2) as! UIImageView
             let label = cell.viewWithTag(3) as! UILabel
             
-            if let favorites = defaults.array(forKey: "favoriteArticles") as? [News] {
+            if news.count > 0 {
                 
                 do {
-                    background.image? = try UIImage(data: Data(contentsOf: URL(string: favorites[indexPath.item].imageUrl!)!))!
+                    background.image? = try UIImage(data: Data(contentsOf: URL(string: news[indexPath.item].imageUrl!)!))!
                 } catch {
                     print("NO IMAGE")
                 }
                 
-                label.text = favorites[indexPath.item].nTitle
+                label.text = news[indexPath.item].nTitle
                 
             }
             
@@ -117,6 +133,17 @@ class PerfilViewController: UIViewController, UICollectionViewDataSource, UIColl
             
         default:
             return UICollectionViewCell()
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let url = URL(string: news[indexPath.item].postURL!)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url!)
         }
         
     }

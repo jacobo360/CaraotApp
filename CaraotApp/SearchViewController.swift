@@ -41,7 +41,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.title = "Buscador de Noticias"
+        self.navigationController?.isNavigationBarHidden = false
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

@@ -26,7 +26,7 @@ class ReporteroViewController: UIViewController, UINavigationControllerDelegate,
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor.clear
+        self.navigationController?.isNavigationBarHidden = false
         
         txtField.layer.cornerRadius = 7
         sendBtnOut.layer.cornerRadius = 7
@@ -37,12 +37,11 @@ class ReporteroViewController: UIViewController, UINavigationControllerDelegate,
         tap.delegate = self
         clickView.addGestureRecognizer(tap)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+
     @IBAction func sendBtnAct(_ sender: AnyObject) {
         Mailer().setupMail(attachment: UIImageJPEGRepresentation(fotoView.image!, 1)!, body: txtField.text, mailComposer: mailComposer)
         mailComposer.mailComposeDelegate = self
