@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CDFF717F2F9CDE2884B2EC678E9C901F'
+               BlueprintIdentifier = '97605EACCD1BF20E5B44681E8599811B'
                BlueprintName = 'MDHTMLLabel'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'MDHTMLLabel.framework'>

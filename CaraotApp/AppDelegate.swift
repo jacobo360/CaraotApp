@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         
         registerForPushNotifications(application: application)
+        
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-8117643233045904~3291574678")
         
         return true
     }

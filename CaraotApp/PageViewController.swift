@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftyJSON
+import GoogleMobileAds
 
-class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
+class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, GADInterstitialDelegate {
 
     var pageViewController: UIPageViewController?
     var newsArray: [News] = []
@@ -17,10 +18,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     var page = 1
     var redo = false
     var loading = false
+    var interstitial: GADInterstitial!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if defaults.array(forKey: "selectedCategories") == nil {
             redo = true
             performSegue(withIdentifier: "to_categories", sender: self)
@@ -41,7 +43,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -187,4 +188,30 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         return cVC
     }
 
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interst = GADInterstitial(adUnitID: "ca-app-pub-8117643233045904/4768307876")
+        interst.delegate = self
+        // Request test ads on devices you specify. Your test device ID is printed to the console when
+        // an ad request is made.
+//        request.testDevices = [ kGADSimulatorID ]
+        let request = GADRequest()
+        request.setLocationWithLatitude(10.500000, longitude: -66.916664, accuracy: 1_000_000)
+//        request.keywords = ["Noticias", "Venezuela", "Inversion", "Caracas"]
+        interst.load(request)
+        
+        return interst
+    }
+    
+    func showInterstitial() {
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createAndLoadInterstitial()
+    }
+    
 }

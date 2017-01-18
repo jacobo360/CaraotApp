@@ -49,6 +49,11 @@ class ContentViewController: UIViewController {
         
         categoryLbl.text = nCategory
         imgView.kf.setImage(with: URL(string: nImage!), placeholder: UIImage(named: "caraota-background"))
+        
+        if pageIndex == 1 {
+            (parent as! PageViewController).interstitial = (parent as! PageViewController).createAndLoadInterstitial()
+        }
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +68,13 @@ class ContentViewController: UIViewController {
             
         }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(pageIndex!)
+        if pageIndex! % 5 == 0 && pageIndex != 0 {
+            (parent as! PageViewController).showInterstitial()
+        }
     }
     
 }

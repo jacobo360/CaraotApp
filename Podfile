@@ -12,6 +12,8 @@ target 'CaraotApp' do
   pod 'MDHTMLLabel'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod 'SwiftString'
+  pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
 
   target 'CaraotAppTests' do
     inherit! :search_paths
