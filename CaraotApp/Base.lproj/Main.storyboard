@@ -499,6 +499,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caraota2" translatesAutoresizingMaskIntoConstraints="NO" id="ljM-hM-zXa" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="93.5" y="283.5" width="188" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="Dee-IW-FzY"/>
+                                    <constraint firstAttribute="height" constant="100" id="zci-oD-aXg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="curve" value="spring"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="repeatCount">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -514,12 +535,15 @@
                             <constraint firstItem="Sx9-m8-9LL" firstAttribute="top" secondItem="tJ7-wb-IAL" secondAttribute="top" constant="70" id="i1A-EL-NVg"/>
                             <constraint firstItem="HN8-pL-Vsu" firstAttribute="leading" secondItem="tJ7-wb-IAL" secondAttribute="leading" id="oX1-hW-kg9"/>
                             <constraint firstItem="rEg-zE-h4s" firstAttribute="trailing" secondItem="HN8-pL-Vsu" secondAttribute="trailing" id="ub9-g8-H09"/>
+                            <constraint firstItem="ljM-hM-zXa" firstAttribute="centerY" secondItem="tJ7-wb-IAL" secondAttribute="centerY" id="vaE-ko-Qvo"/>
+                            <constraint firstItem="ljM-hM-zXa" firstAttribute="centerX" secondItem="tJ7-wb-IAL" secondAttribute="centerX" id="w94-dL-ga3"/>
                             <constraint firstAttribute="trailing" secondItem="Sx9-m8-9LL" secondAttribute="trailing" constant="8" id="x8c-y6-ILL"/>
                             <constraint firstAttribute="trailing" secondItem="HN8-pL-Vsu" secondAttribute="trailing" id="y6d-gN-FDD"/>
                             <constraint firstItem="19c-eC-qLM" firstAttribute="leading" secondItem="tJ7-wb-IAL" secondAttribute="leading" id="zSo-a3-KVh"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loader" destination="ljM-hM-zXa" id="MCD-fa-Ewp"/>
                         <outlet property="searchBar" destination="Sx9-m8-9LL" id="F3q-PN-eoL"/>
                         <outlet property="tblView" destination="19c-eC-qLM" id="umx-Nz-qYL"/>
                     </connections>

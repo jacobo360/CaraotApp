@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import MDHTMLLabel
+import Spring
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
@@ -16,6 +17,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var loader: SpringImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +52,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        loader.isHidden = false
+        
         let text = searchBar.text?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let url = "http://caraotadigital.net/wp-json/wp/v2/posts?_embed&search=\(text!)"
         
         APICaller().getAllNews(url: url) { response in
+            
+            self.loader.isHidden = true
+            
             if response.0 != JSON.null && response.0.count != 0 {
                 self.results.removeAll(keepingCapacity: false)
                 for i in 0..<response.0.count {
@@ -94,15 +102,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let url = URL(string: results[indexPath.row].postURL!)!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
