@@ -45,6 +45,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,8 +77,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
                 }
             }
         }
-        
-        print("http://caraotadigital.net/wp-json/wp/v2/posts?_embed&per_page=10&page=\(page)\(categories)")
         
         APICaller().getAllNews(url: "http://caraotadigital.net/wp-json/wp/v2/posts?_embed&per_page=10&page=\(page)\(categories)") { response in
             if response.0 != JSON.null && response.0.count != 0 {
@@ -112,7 +111,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
                 self.page += 1
                 
                 if andReload {
-                    print("SETTING NEW")
                     self.setViewControllers([self.viewControllerAt(index: 0)],
                                             direction: .forward,
                                             animated: true,
@@ -174,6 +172,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     func viewControllerAt(index: Int) -> UIViewController {
         
         if newsArray.count == 0 || index >= newsArray.count {
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let lVC = storyboard.instantiateViewController(withIdentifier: "LoadingView")
             
@@ -192,6 +191,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
             cVC.nCategory = "  " + newsArray[index].categoryName! + "  "
             cVC.nContent = newsArray[index].content
             cVC.nImage = newsArray[index].imageUrl
+            cVC.nURL = newsArray[index].postURL
             
             self.view.isUserInteractionEnabled = true
             return cVC
@@ -207,7 +207,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         // an ad request is made.
 //        request.testDevices = [ kGADSimulatorID ]
         let request = GADRequest()
-        request.setLocationWithLatitude(10.500000, longitude: -66.916664, accuracy: 1_000_000)
+//        request.setLocationWithLatitude(10.500000, longitude: -66.916664, accuracy: 1_000_000)
 //        request.keywords = ["Noticias", "Venezuela", "Inversion", "Caracas"]
         interst.load(request)
         

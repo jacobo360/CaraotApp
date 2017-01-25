@@ -86,8 +86,9 @@ class ViewController: RESideMenu, RESideMenuDelegate {
     
     func shareTapped() {
         // text to share
-        let news = ((self.childViewControllers[0] as! PageViewController).childViewControllers[0] as! ContentViewController).news
-        let text = "Ví esta noticia en Caraota Digital: \(news!.nTitle). Puedes verla aqui: \(news!.postURL)"
+        let news = ((self.childViewControllers[1] as! PageViewController).childViewControllers[0] as! ContentViewController)
+        print(news)
+        let text = "Ví esta noticia en Caraota Digital: \(news.nTitle!). Puedes verla aqui: \(news.nURL!)"
         
         // set up activity view controller
         let textToShare = [text]

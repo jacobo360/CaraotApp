@@ -19,6 +19,7 @@ class ContentViewController: UIViewController {
     var nContent: String?
     var nCategory: String?
     var nImage: String?
+    var nURL: String?
     var isFavorite: Bool = false
     var news: News?
     
@@ -36,23 +37,26 @@ class ContentViewController: UIViewController {
         titleLbl.text = nTitle?.decodeHTML()
         authorLbl.text = nAuthor
         
+        //Create and show attributed content
         var str: NSMutableAttributedString = NSMutableAttributedString(string: "")
-        
         do {
-            str = try NSMutableAttributedString(HTMLString: nContent!.decodeHTML(), font: UIFont(name: "Helvetica", size: 16.0)!)!
+            str = try NSMutableAttributedString(HTMLString: self.nContent!.decodeHTML(), font: UIFont(name: "Helvetica", size: 16.0)!)!
         } catch {
             print("could not parse")
         }
         
-        contentLbl.attributedText = str
-        contentLbl.firstLineIndent = 20
+        self.contentLbl.firstLineIndent = 20
+        self.categoryLbl.text = self.nCategory
         
-        categoryLbl.text = nCategory
+        self.contentLbl.attributedText = str
+        
         imgView.kf.setImage(with: URL(string: nImage!), placeholder: UIImage(named: "caraota-background"))
         
         if pageIndex == 1 {
             (parent as! PageViewController).interstitial = (parent as! PageViewController).createAndLoadInterstitial()
         }
+        
+        self.automaticallyAdjustsScrollViewInsets = false
         
     }
 
@@ -71,15 +75,18 @@ class ContentViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(pageIndex!)
+
         if pageIndex! % 5 == 0 && pageIndex != 0 {
             (parent as! PageViewController).showInterstitial()
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+    }
+    
     @IBAction func verMasBtn(_ sender: Any) {
     
-        let url = URL(string: news!.postURL!)!
+        let url = URL(string: nURL!)!
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
