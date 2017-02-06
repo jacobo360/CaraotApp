@@ -39,16 +39,23 @@ class ContentViewController: UIViewController {
         
         //Create and show attributed content
         var str: NSMutableAttributedString = NSMutableAttributedString(string: "")
-        do {
-            str = try NSMutableAttributedString(HTMLString: self.nContent!.decodeHTML(), font: UIFont(name: "Helvetica", size: 16.0)!)!
-        } catch {
-            print("could not parse")
+        
+        DispatchQueue.global().async {
+         
+            do {
+                str = try NSMutableAttributedString(HTMLString: self.nContent!.decodeHTML(), font: UIFont(name: "Helvetica", size: 16.0)!)!
+            } catch {
+                print("could not parse")
+            }
+            
+            DispatchQueue.main.async(execute: {
+                self.contentLbl.attributedText = str
+            })
+            
         }
         
         self.contentLbl.firstLineIndent = 20
         self.categoryLbl.text = self.nCategory
-        
-        self.contentLbl.attributedText = str
         
         imgView.kf.setImage(with: URL(string: nImage!), placeholder: UIImage(named: "caraota-background"))
         
