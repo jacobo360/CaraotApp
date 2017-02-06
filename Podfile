@@ -14,6 +14,7 @@ target 'CaraotApp' do
   pod 'SwiftString'
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
+  pod 'OneSignal'
 
   target 'CaraotAppTests' do
     inherit! :search_paths

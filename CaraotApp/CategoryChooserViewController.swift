@@ -13,6 +13,8 @@ class CategoryChooserViewController: UIViewController, UICollectionViewDataSourc
 
     var categories: [Int : String] = [:]
     
+    @IBOutlet weak var guardarBtn: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var collView: UICollectionView!
     
     override func viewDidLoad() {
@@ -20,6 +22,9 @@ class CategoryChooserViewController: UIViewController, UICollectionViewDataSourc
 
         collView.delegate = self
         collView.dataSource = self
+        
+        spinner.isHidden = false
+        guardarBtn.isHidden = true
         
         getCategories()
     }
@@ -96,7 +101,14 @@ class CategoryChooserViewController: UIViewController, UICollectionViewDataSourc
                 for i in 0..<response.0.count {
                     self.categories[response.0[i]["id"].intValue] = response.0[i]["name"].stringValue
                     defaults.set(response.0[i]["name"].stringValue, forKey: "cat" + response.0[i]["id"].stringValue)
+                    self.spinner.isHidden = true
+                    self.guardarBtn.isHidden = false
+                    
                 }
+            } else {
+                
+                self.showAlert(title: "¡Algo ha salido mal!", message: "No hemos podido conseguir las noticias ¿Estás conectado a internet?")
+                
             }
             
         self.collView.reloadData()
@@ -105,10 +117,41 @@ class CategoryChooserViewController: UIViewController, UICollectionViewDataSourc
     }
     
     @IBAction func guardarBtn(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+        
+        if let selected = defaults.array(forKey: "selectedCategories") as? [Int] {
+        
+            if selected.count == 0 {
+                
+                defaults.set(Array(categories.keys), forKey: "selectedCategories")
+                
+            }
+        
+        } else {
+            
+            defaults.set(Array(categories.keys), forKey: "selectedCategories")
+            
+        }
+        
+        //self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "to_root", sender: self)
+        
     }
     
-
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Reintentar", style: UIAlertActionStyle.default, handler: { action in
+            
+            self.getCategories()
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
 }
 
 let defaults = UserDefaults.standard

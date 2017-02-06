@@ -19,6 +19,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     var redo = false
     var loading = false
     var interstitial: GADInterstitial!
+    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         self.view.isUserInteractionEnabled = false
         
         if defaults.array(forKey: "selectedCategories") == nil {
-            redo = true
+            
             performSegue(withIdentifier: "to_categories", sender: self)
+            
         } else {
         
             dataSource = self
@@ -49,14 +51,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if redo {
-            setViewControllers([viewControllerAt(index: 0)],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
-            
-            getNews(andReload: true)
-        }
+        
+
+        
     }
     
     func getNews(andReload: Bool) {
@@ -124,6 +121,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
                                             completion: nil)
                 }
                 
+            } else {
+                self.showAlert(title: "¡Algo ha salido mal!", message: "No hemos podido conseguir las noticias ¿Estás conectado a internet?")
             }
         }
     }
@@ -217,13 +216,37 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     func showInterstitial() {
         if interstitial.isReady {
             interstitial.present(fromRootViewController: self)
+            timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.dismissInterstitial), userInfo: nil, repeats: false)
         } else {
             print("Ad wasn't ready")
         }
     }
     
+    func dismissInterstitial() {
+        
+        print("here")
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         interstitial = createAndLoadInterstitial()
+        timer.invalidate()
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Reintentar", style: UIAlertActionStyle.default, handler: { action in
+           
+            self.getNews(andReload: true)
+            
+        }))
+            
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default, handler: nil))
+            
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
 }

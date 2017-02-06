@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import GoogleMobileAds
+import OneSignal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -19,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        registerForPushNotifications(application: application)
-        
         GADMobileAds.configure(withApplicationID: "ca-app-pub-8117643233045904~3291574678")
+        
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "27ce82b8-52c2-4b99-9303-c017316d7997")
         
         return true
     }

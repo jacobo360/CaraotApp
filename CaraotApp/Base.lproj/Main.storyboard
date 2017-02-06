@@ -251,6 +251,10 @@
                                     <action selector="guardarBtn:" destination="yMi-qf-hUF" eventType="touchUpInside" id="J9X-w9-sX0"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="E6Q-nt-2mq">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.80376023050000001" green="0.98791915180000001" blue="0.56145155430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -265,7 +269,9 @@
                             <constraint firstItem="UpZ-W8-MZs" firstAttribute="trailing" secondItem="yzI-cp-s8Z" secondAttribute="trailingMargin" constant="-20" id="MVh-kC-gKZ"/>
                             <constraint firstItem="1EH-FU-rhq" firstAttribute="leading" secondItem="yzI-cp-s8Z" secondAttribute="leadingMargin" id="Mof-do-j0o"/>
                             <constraint firstItem="UpZ-W8-MZs" firstAttribute="top" secondItem="1EH-FU-rhq" secondAttribute="bottom" constant="1" id="Ogf-Y3-34R"/>
+                            <constraint firstItem="E6Q-nt-2mq" firstAttribute="centerY" secondItem="yzI-cp-s8Z" secondAttribute="centerY" id="PgC-Jc-dWE"/>
                             <constraint firstItem="W2K-P0-b7W" firstAttribute="leading" secondItem="yzI-cp-s8Z" secondAttribute="leadingMargin" id="TbE-Kd-nKC"/>
+                            <constraint firstItem="E6Q-nt-2mq" firstAttribute="centerX" secondItem="yzI-cp-s8Z" secondAttribute="centerX" id="Y24-zf-up2"/>
                             <constraint firstItem="fbc-CW-Jrt" firstAttribute="leading" secondItem="yzI-cp-s8Z" secondAttribute="leading" id="cb0-9Q-egO"/>
                             <constraint firstItem="W2K-P0-b7W" firstAttribute="trailing" secondItem="yzI-cp-s8Z" secondAttribute="trailingMargin" id="d6B-rg-rwR"/>
                             <constraint firstItem="bSx-nr-smM" firstAttribute="top" secondItem="8K2-0d-h35" secondAttribute="bottom" constant="20" id="fEG-Kr-7Id"/>
@@ -279,6 +285,9 @@
                     </view>
                     <connections>
                         <outlet property="collView" destination="8K2-0d-h35" id="Ywk-8s-S4V"/>
+                        <outlet property="guardarBtn" destination="bSx-nr-smM" id="IVM-X1-ofV"/>
+                        <outlet property="spinner" destination="E6Q-nt-2mq" id="jcS-gz-m8G"/>
+                        <segue destination="bgL-HJ-sr5" kind="show" identifier="to_root" id="CSM-ro-oDp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F42-59-TVc" userLabel="First Responder" sceneMemberID="firstResponder"/>

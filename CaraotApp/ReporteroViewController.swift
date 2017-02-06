@@ -94,7 +94,7 @@ class ReporteroViewController: UIViewController, UINavigationControllerDelegate,
         }
         else
         {
-            let alertWarning = UIAlertView(title:"Error", message: "No pudímos accesar tu camara, por favor revisa tus configuraciones y permisos", delegate:nil, cancelButtonTitle:"OK", otherButtonTitles:"")
+            let alertWarning = UIAlertView(title:"Error", message: "No pudímos accesar tu camara, por favor revisa tus configuraciones y permisos", delegate: nil, cancelButtonTitle:"OK", otherButtonTitles:"")
             alertWarning.show()
         }
     }

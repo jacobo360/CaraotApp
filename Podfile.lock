@@ -24,6 +24,7 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
   - MDHTMLLabel (1.0.2)
+  - OneSignal (2.3.5)
   - RESideMenu (4.0.7)
   - Spring (1.0.3)
   - SwiftString (0.5)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Core
   - MDHTMLLabel
+  - OneSignal
   - RESideMenu (~> 4.0.7)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - SwiftString
@@ -58,10 +60,11 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   MDHTMLLabel: 18bf09ec7d6c1ae396497345c005857c0493ee0a
+  OneSignal: 4cb42948ebc141bd5deb54d3fda25105db94f6d4
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftString: ec9c31c55b2aa147a1154f5f5f8483dc71e3165f
 
-PODFILE CHECKSUM: af84fa90361d2c89004e406dd5028df223171b3a
+PODFILE CHECKSUM: 3a0eaa8f576216509de101a35d9e8623c7fe5c1b
 
 COCOAPODS: 1.2.0.beta.3
